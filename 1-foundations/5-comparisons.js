@@ -1,10 +1,11 @@
 // Equality is ==
-1 == 1; // = true
-2 == 1; // = false
+1 == 1; // -> true
+2 == 1; // -> false
+"Hello" == "Hello"; // -> true
 
 // Inequality is !=
-1 != 1; // = false
-2 != 1; // = true
+1 != 1; // -> false
+2 != 1; // -> true
 
 // Objects are compared by reference, not by value
 [1, 2, 3] == [1, 2, 3] // -> false!!!
@@ -19,7 +20,7 @@ null == undefined;
 1 == "1";
 0 == "";
 
-// Edge Cases: Should not happen
+// Edge Cases: Should be omitted
 [] == "";
 [1, 2, 3] == "1,2,3";
 1 == true;
@@ -36,7 +37,13 @@ null !== undefined;
 1 !== "1";
 
 // More comparisons
-1 < 10; // = true
-1 > 10; // = false
-2 <= 2; // = true
-2 >= 2; // = true
+1 < 10; // -> true
+1 > 10; // -> false
+2 <= 2; // -> true
+2 >= 2; // -> true
+
+// Strings are compared via the code points. This results in weird behavior:
+"A" < "B"; // -> true
+"a" < "B"; // -> false
+
+// How can we solve this?

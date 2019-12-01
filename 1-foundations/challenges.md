@@ -6,6 +6,7 @@
 
 2. Write the number 123 as a hexdecimal and as binary number literal
 ```
+123
 0x...
 0b...
 ```

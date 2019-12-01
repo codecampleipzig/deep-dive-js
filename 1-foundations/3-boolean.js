@@ -12,8 +12,8 @@ Boolean("") // -> false
 Boolean(0) // -> false
 Boolean([]) // -> true
 Boolean(-1) // -> true
-Boolean(null) // -> true
-Boolean(undefined) // -> undefined
+Boolean(null) // -> false
+Boolean(undefined) // -> false
 
 // Logical Operators
 
@@ -25,8 +25,6 @@ false || false
 
 true ? 1 : 2
 false ? 1 : 2
-
-// Examples
 
 1 + 1 == 2 && 10 * 10 > 50;
 

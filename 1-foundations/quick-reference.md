@@ -57,8 +57,10 @@ Identifier Expressions
 
 What is a statement?
 The building blocks of a javascript program. A javascript program is a list of statements.
+They often end with a semicolon.
 
 What is the difference between an expression and a statement?
+Expressions yield a value upon evaluation. Statements don't.
 
 
 ## null & undefined
