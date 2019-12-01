@@ -1,0 +1,18 @@
+{
+  "name": "deep-dive-js",
+  "version": "1.0.0",
+  "description": "## Chapters",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "jest": "^24.9.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint **/challenges.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
