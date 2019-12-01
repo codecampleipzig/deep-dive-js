@@ -4,15 +4,15 @@ var x1 = 42;
 let x2 = 42;
 const x3 = 42;
 
-// Prefer const over let and let over const.
+// RULE: Prefer const over let and let over const.
 
-// Bindings defined with var and let can be reassigned;
+// Distinction 1: Bindings defined with var and let can be reassigned
 
 x1 = 43;
 x2 = 43;
 // x3 = 43; ERROR!!! Can't reasign const variable
 
-// Bindings created with var are visible in the whole function, while bindings created with let and const belong to the block they are created in.
+// Distinction 2: Bindings created with var are visible in the whole function, while bindings created with let and const belong to the block they are created in.
 
 function varFn() {
    if (true) {
@@ -29,6 +29,8 @@ function letFn() {
    }
    x; // ERROR x is not defined;
 }
+
+// Nested Scopes
 
 let a = 10;
 function scopes() {
