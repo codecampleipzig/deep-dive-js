@@ -4,18 +4,15 @@
 
 1. Foundations
 
-   - Types, Values, Operators and Expressions
-     - Numbers
-     - Strings
-     - Booleans
-       - Comparisons & Equality
-     - Empty Values
-     - Call and Member Operator
-   - Statements & Program Structure
-     - Comments
-     - Bindings
-     - Conditionals
-     - Loops
+- Types, Values, Operators and Expressions
+  - Numbers
+  - Strings
+  - Booleans
+  - Types
+  - Comparisons
+  - Bindings
+  - Conditionals
+  - Loops
 
 2. Data Structures
 
