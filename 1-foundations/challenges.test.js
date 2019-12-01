@@ -1,7 +1,7 @@
 const Challenges = require ("./challenges")
 
 describe ("1 Foundations", () => {
-   xtest("escapeChallenge", () => {
+   test("escapeChallenge", () => {
       const s = Challenges.escapeChallenge();
       expect(s.charAt(0)).toBe("\\");
       expect(s.charAt(1)).toBe('"');
@@ -14,14 +14,14 @@ describe ("1 Foundations", () => {
       expect(s.length).toBe(8);
    });
 
-   xtest("addLineNumbers", () => {
+   test("addLineNumbers", () => {
       expect(Challenges.addLineNumbers("Hello\nWorld\n!")).toBe("1 Hello\n2 World\n3 !");
       expect(Challenges.addLineNumbers("")).toBe("1 ");
       expect(Challenges.addLineNumbers("A")).toBe("1 A");
       expect(Challenges.addLineNumbers(".\n.\n.")).toBe("1 .\n2 .\n3 .");
    })
 
-   xtest("jstypeof", () => {
+   test("jstypeof", () => {
       expect(Challenges.jstypeof("")).toBe("string");
       expect(Challenges.jstypeof(null)).toBe("null");
       expect(Challenges.jstypeof(() => {})).toBe("object");
@@ -31,7 +31,7 @@ describe ("1 Foundations", () => {
       expect(Challenges.jstypeof(undefined)).toBe("undefined");
    });
 
-   xtest("randomNumber", () => {
+   test("randomNumber", () => {
       for (let i = 0; i < 100; i++) {
          const min = -4.123;
          const max = 24.68;
@@ -44,7 +44,7 @@ describe ("1 Foundations", () => {
       }
    })
 
-   xtest("randomInt", () => {
+   test("randomInt", () => {
       for (let i = 0; i < 100; i++) {
          const min = -4.123;
          const max = 24.68;
@@ -58,14 +58,14 @@ describe ("1 Foundations", () => {
       }
    })
 
-   xtest("add", () => {
+   test("add", () => {
       expect (Challenges.add(1, 2)).toBe(3);
       expect (Challenges.add("1", 2)).toBe(3);
       expect (Challenges.add(1, "2")).toBe(3);
       expect (() => {Challenges.add(null, 0)}).toThrow();
    });
 
-   xtest("fizzBuzz", () => {
+   test("fizzBuzz", () => {
       const consoleLog = console.log;
       let logOutput = ""
       console.log = (msg) => {
@@ -78,7 +78,7 @@ describe ("1 Foundations", () => {
       console.log = consoleLog;
    });
 
-   xtest("greeting", () => {
+   test("greeting", () => {
       expect(Challenges.greeting("Anne", "English")).toBe("Hello Anne!");
       expect(Challenges.greeting("Bob", "French")).toBe("Salut Bob!");
       expect(Challenges.greeting("Carolin", "German")).toBe("Hallo Carolin!");
@@ -87,18 +87,18 @@ describe ("1 Foundations", () => {
       })
    });
 
-   xtest("randomLowerCase", () => {
+   test("randomLowerCase", () => {
       const s = Challenges.randomLowerCaseString(10);
       expect(s.length).toBe(10);
       expect(s.split().every(c => /[a-z]/.test(c)));
    });
 
-   xtest("isVarBinding", () => {
+   test("isVarBinding", () => {
       expect(Challenges.isVarBinding("var x = 10;"));
       expect(!Challenges.isVarBinding("let x = 10;"));
    })
 
-   xtest("fileExtension", () => {
+   test("fileExtension", () => {
       expect(Challenges.fileExtension("Readme.md")).toBe("md");
       expect(Challenges.fileExtension("Readme.test")).toBe("test");
       expect(Challenges.fileExtension("Readme")).toBe("");
