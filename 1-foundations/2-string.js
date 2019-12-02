@@ -3,15 +3,22 @@
 "Hello, world";
 
 // Interpolation with `
+"3 * 5 = 15";
+"3 * 5 = " + 3 * 5;
 `3 * 5 = ${3 * 5}`;
+const name = "Gabe"
+const language = "English";
+console.log (`${translate("Hello", language)} ${name}`);
 
 // Strings are concatenated with +
 "Hello " + "world!";
-"Number " + 666;
+"Number " + 666; // -> "Number 666"
 
 // Special characters like new line must be escaped using \
 
 "This is the first line\nAnd this is the second"
+${}\
+`\${}\\`
 
 "A new line character is written like \"\\n\"."
 
@@ -29,7 +36,7 @@ String({}) // -> "[object Object]"
 
 // Methods
 
-"Hello".charAt(2);
+"Hello".charAt(2); // -> "l"
 "Hello"[2];
 
 // Code Points
@@ -38,12 +45,11 @@ String({}) // -> "[object Object]"
 "A".codePointAt(0); // -> 65
 String.fromCodePoint(65); // -> "A"
 
-
 // Manipulation
-"Hello".substring(2);
-"Hello".substring(1, 3);
-"Hello".substring(2, 2);
-"Hello".substring(0, 3);
+"Hello".substring(2); // -> "llo"
+"Hello".substring(1, 3); // -> "el"
+"Hello".substring(2, 2); // -> ""
+"Hello".substring(0, 3); // -> "Hel"
 
 
 // Querying
@@ -64,9 +70,23 @@ String.fromCodePoint(65); // -> "A"
 
 // Splitting Words
 "You don't know Jack".split(" ") // -> ["You", "don't", "know", "Jack"]
+const sourceCode =
+`The quick brown fox jumps over the lazy dog.
+If the dog reacted, was it really lazy?`
+
+const lines = sourceCode.split("\n")
+['The quick brown fox jumps over the lazy dog.',
+'If the dog reacted, was it really lazy?']
+
+const linesSplitIntoWords = lines.map(s => s.split(" "));
+[
+   ['The', 'quick', 'brown', 'fox',...],
+   ['If', 'the', 'dog', ...]
+]
 
 // Replace
 const p = "The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?"
+
 p.replace("dog", "moose") // -> "The quick brown fox jumps over the lazy moose. If the moose reacted, was it really lazy?"
 
 // Regular Expressions are a key tool for advanced string manipulation.

@@ -1,11 +1,15 @@
 // Literals
 42;
 3.5;
+10;
 
 // Scientific notation
 1e6;
 3.5e2;
 123e-2;
+const ageOfTheEarth = 5e9;
+const numberOfAtomsInTheUniverse = 1e90;
+const numberStorableIn512Bits = 1e150;
 
 // Hexadecimal
 0xff;
@@ -15,7 +19,7 @@
 
 // Binary
 0b10;
-0b1101;
+0b1101; // -> 1 + 4 + 8 = 13
 
 // Arithmetic Operators
 3 + 5;
@@ -36,9 +40,9 @@
 -(3 + 5);
 
 // Special Values;
-infinity;
--infinity;
-NaN;
+infinity; // -> 2 / 0
+-infinity; // -> -1 / 0
+NaN; // -> 0 / 0, 1 % 0
 
 // Special rule:
 NaN == NaN; // -> false
@@ -57,7 +61,8 @@ Number("One"); // -> NaN
 // But edge cases
 Number(""); // -> 0
 Number(null); // -> 0
-Number([]); // -> 0
+Number([[]]); // -> 0
+Number({}) == Number("[object Object]") == NaN
 Number(false); // -> 0
 Number(true); // -> 1
 
@@ -71,10 +76,11 @@ parseFloat([]); // -> NaN
 parseFloat(false); // -> NaN
 
 // Rounding
-Math.floor(1.234);
-Math.ceil(1.234);
-Math.round(1.5);
-parseInt("1.8");
+Math.floor(1.234); // -> 1
+Math.ceil(1.234); // -> 2
+Math.round(1.5); // -> 2
+Math.round(1.49999); // -> 1
+parseInt("1.8"); // -> 1
 
 // Random Number
 Math.random();
