@@ -14,11 +14,20 @@ module.exports = {
 
 // Return this string \"'``'"\
 function escapeChallenge() {
+   return "\\\"\'\`\`\'\"\\";
 }
 
 // Add line numbers to the beginning of each line:
 // e.g. addLineNumbers("Hello\nWorld\n!") -> "1 Hello\n2 World\n3 !"
 function addLineNumbers(text) {
+   const lines = text.split("\n");
+   let output = "";
+   for(let i = 0; i < lines.length; i++) {
+      const line = i + 1;
+      output += `${line} ${lines[i]}`;
+      output += (line != lines.length) ? '\n' : '';
+   }
+   return output;
 }
 
 // A bugfree version of typeof
@@ -29,12 +38,20 @@ function jstypeof(value) {
 }
 
 // Return a random number in the range min (inclusive) to max (exclusive)
+// 
 function randomNumber(min, max) {
+   if ( min >= max) {
+      return "max has to be greater min";
+   }
+   const range = max - min;
+   return min + Math.random() * range;
 }
 
 // Return a random integer between min (inclusive) and max (exclusive)
 // You may assume that min and max are both integers.
 function randomInt(min, max) {
+   min = (min < 0) ? min + 1 : min;
+   return Math.floor(randomNumber(min, max));
 }
 
 // Write a function that takes two arguments and returns their sum.
