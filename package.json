@@ -10,7 +10,8 @@
   },
   "scripts": {
     "test": "jest",
-    "lint": "eslint **/challenges.js"
+    "lint": "eslint **/challenges.js",
+    "start": "challenges.js"
   },
   "keywords": [],
   "author": "",
