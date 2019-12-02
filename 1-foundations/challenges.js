@@ -41,13 +41,14 @@ function jstypeof(value) {
 
 // Return a random number in the range min (inclusive) to max (exclusive)
 function randomNumber(min, max) {
-   return Math.random()
-}
+   return Math.random() * (max - min) + min;
+ }
+
 
 // Return a random integer between min (inclusive) and max (exclusive)
 // You may assume that min and max are both integers.
 function randomInt(min, max) {
-   return parseInt(randomNumber)
+   return Math.floor(Math.random() * (max - min)) + min;
 }
 
 // Write a function that takes two arguments and returns their sum.
