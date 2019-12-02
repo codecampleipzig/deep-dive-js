@@ -48,7 +48,7 @@ describe ("1 Foundations", () => {
       for (let i = 0; i < 100; i++) {
          const min = -4.123;
          const max = 24.68;
-         const r = Challenges.randomNumber(min, max);
+         const r = Challenges.randomInt(min, max);
          if (typeof r != "number" || Math.floor(r) != r || r < min || r >= max) {
             expect(typeof r).toBe("number");
             expect(Math.floor(r) != r);
