@@ -2,7 +2,7 @@
 
 ## Complexity
 
-The complexity of an operation is an estimation of the number of steps needed for its computation.
+The complexity of an operation is an estimation of the number of steps needed for its execution.
 Complexity is described in relation to the size of the input data set, denoted by the letter n.
 A common system for notating complexities, is called the big O notation:
 
@@ -17,5 +17,5 @@ A common system for notating complexities, is called the big O notation:
 The two most common kinds of data structures are _sequential_ and _associative_.
 In Javascript they are implemented as Arrays (sequential) and Objects (associative).
 
-Many more data structures have been and invented and are used for specific use cases.
-They differ in terms of their complexity regarding operations like search, traversal, insertion etc...
+Many more data structures have been invented and are tailored for very specific use cases.
+They differ in terms of their complexity and memory consumption regarding operations like search, traversal, insertion etc...
