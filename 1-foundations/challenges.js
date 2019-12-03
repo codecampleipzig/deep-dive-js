@@ -50,6 +50,7 @@ function randomNumber(min, max) {
 // Return a random integer between min (inclusive) and max (exclusive)
 // You may assume that min and max are both integers.
 function randomInt(min, max) {
+   return Math.floor(Math.random() * (max - min) + min);
 }
 
 // Write a function that takes two arguments and returns their sum.

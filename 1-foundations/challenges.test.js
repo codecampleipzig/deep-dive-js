@@ -44,7 +44,7 @@ describe ("1 Foundations", () => {
       }
    })
 
-   xtest("randomInt", () => {
+   test("randomInt", () => {
       for (let i = 0; i < 100; i++) {
          const min = -4;
          const max = 24;
