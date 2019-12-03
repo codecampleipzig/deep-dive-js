@@ -57,7 +57,17 @@ function randomInt(min, max) {
 // If any of the arguments is a string convert them first to a number using parseFloat.
 // If the conversion fails, throw an exception;
 function add(lhs, rhs) {
-}
+  let left = lhs;
+  let right = rhs;
+   if (typeof(lhs) !== "number") {
+      lhs = parseFloat(lhs);
+   };
+   if (typeof(rhs) !== "number") {
+      rhs = parseFloat(rhs);
+   }; 
+   if (isNaN(lhs) || isNaN(rhs)) throw "Parameter is not a number";
+   return lhs + rhs;
+};
 
 // Print all the numbers from 1 to 100 with two exceptions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead. For numbers that are divisible by both 5 and 3 print "FizzBuzz".
 function fizzBuzz() {
