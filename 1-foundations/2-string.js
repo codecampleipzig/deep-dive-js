@@ -65,9 +65,9 @@ String.fromCodePoint(65); // -> "A"
 // Splitting Words
 "You don't know Jack".split(" ") // -> ["You", "don't", "know", "Jack"]
 
-// Replace
+// Replace (by default only replaces first occurence)
 const p = "The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?"
-p.replace("dog", "moose") // -> "The quick brown fox jumps over the lazy moose. If the moose reacted, was it really lazy?"
+p.replace("dog", "moose") // -> "The quick brown fox jumps over the lazy moose. If the dog reacted, was it really lazy?"
 
 // Regular Expressions are a key tool for advanced string manipulation.
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
