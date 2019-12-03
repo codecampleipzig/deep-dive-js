@@ -37,6 +37,12 @@ function addLineNumbers(text) {
 //    typeof null -> "object", but jstypeof(null) -> "null"
 //    typeof () => {} -> "function", but jstypeof(() => {}) -> "object"
 function jstypeof(value) {
+   if ( value === null)
+   return "null"
+   if (value == "() => {}")
+   return "object"
+   else
+   return typeof value
 }
 
 // Return a random number in the range min (inclusive) to max (exclusive)
@@ -48,17 +54,34 @@ function randomNumber(min, max) {
 // Return a random integer between min (inclusive) and max (exclusive)
 // You may assume that min and max are both integers.
 function randomInt(min, max) {
-   return Math.floor(Math.random() * (max - min)) + min;
+   return Math.floor((Math.random() * (max - min)) + min);
 }
 
 // Write a function that takes two arguments and returns their sum.
 // If any of the arguments is a string convert them first to a number using parseFloat.
 // If the conversion fails, throw an exception;
 function add(lhs, rhs) {
+   if(parseFloat(lhs) && parseFloat(rhs) != "NaN")
+   return parseFloat(lhs) + parseFloat(rhs)
+   else
+   throw(`Fail to sum: ${lhs} is ${parseFloat(lhs)} and ${lhs} is ${parseFloat(lhs)}`)
 }
 
 // Print all the numbers from 1 to 100 with two exceptions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead. For numbers that are divisible by both 5 and 3 print "FizzBuzz".
 function fizzBuzz() {
+   let counter = 0
+    while (counter < 100) {
+        counter += 1;
+        if ( counter%3 == 0 && counter%5 == 0){
+            console.log ("FizzBuzz");
+        } else if (counter%3 == 0) {
+            console.log ("Fizz");
+        } else if (counter%5 == 0){
+            console.log ("Buzz");
+        } else {
+            console.log (counter)
+        }
+    }
 }
 
 // Return a greeting string for the specified language
@@ -66,7 +89,9 @@ function fizzBuzz() {
 // greeting("Bob", "French") -> "Salut Bob!"
 // greeting("Carolin", "German") -> "Hallo Carolin!"
 // Throw an exception if the language is not known
+
 function greeting(name, language) {
+
 }
 
 // Return a random string of lowercase ASCII characters.

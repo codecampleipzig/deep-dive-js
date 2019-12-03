@@ -21,7 +21,7 @@ describe ("1 Foundations", () => {
       expect(Challenges.addLineNumbers(".\n.\n.")).toBe("1 .\n2 .\n3 .");
    })
 
-   xtest("jstypeof", () => {
+   test("jstypeof", () => {
       expect(Challenges.jstypeof("")).toBe("string");
       expect(Challenges.jstypeof(null)).toBe("null");
       expect(Challenges.jstypeof(() => {})).toBe("object");
@@ -58,14 +58,14 @@ describe ("1 Foundations", () => {
       }
    })
 
-   xtest("add", () => {
+   test("add", () => {
       expect (Challenges.add(1, 2)).toBe(3);
       expect (Challenges.add("1", 2)).toBe(3);
       expect (Challenges.add(1, "2")).toBe(3);
       expect (() => {Challenges.add(null, 0)}).toThrow();
    });
 
-   xtest("fizzBuzz", () => {
+   test("fizzBuzz", () => {
       const consoleLog = console.log;
       let logOutput = ""
       console.log = (msg) => {
