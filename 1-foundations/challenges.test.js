@@ -21,7 +21,7 @@ describe ("1 Foundations", () => {
       expect(Challenges.addLineNumbers(".\n.\n.")).toBe("1 .\n2 .\n3 .");
    })
 
-   xtest("jstypeof", () => {
+   test("jstypeof", () => {
       expect(Challenges.jstypeof("")).toBe("string");
       expect(Challenges.jstypeof(null)).toBe("null");
       expect(Challenges.jstypeof(() => {})).toBe("object");
@@ -58,14 +58,14 @@ describe ("1 Foundations", () => {
       }
    })
 
-   xtest("add", () => {
+   test("add", () => {
       expect (Challenges.add(1, 2)).toBe(3);
       expect (Challenges.add("1", 2)).toBe(3);
       expect (Challenges.add(1, "2")).toBe(3);
       expect (() => {Challenges.add(null, 0)}).toThrow();
    });
 
-   xtest("fizzBuzz", () => {
+   test("fizzBuzz", () => {
       const consoleLog = console.log;
       let logOutput = ""
       console.log = (msg) => {
@@ -87,18 +87,18 @@ describe ("1 Foundations", () => {
       })
    });
 
-   xtest("randomLowerCase", () => {
+   test("randomLowerCase", () => {
       const s = Challenges.randomLowerCaseString(10);
       expect(s.length).toBe(10);
       expect(s.split().every(c => /[a-z]/.test(c)));
    });
 
-   xtest("isVarBinding", () => {
+   test("isVarBinding", () => {
       expect(Challenges.isVarBinding("var x = 10;"));
       expect(!Challenges.isVarBinding("let x = 10;"));
    })
 
-   xtest("fileExtension", () => {
+   test("fileExtension", () => {
       expect(Challenges.fileExtension("Readme.md")).toBe("md");
       expect(Challenges.fileExtension("Readme.test")).toBe("test");
       expect(Challenges.fileExtension("Readme")).toBe("");
