@@ -1,7 +1,7 @@
 const Challenges = require ("./challenges")
 
 describe ("1 Foundations", () => {
-   xtest("escapeChallenge", () => {
+   test("escapeChallenge", () => {
       const s = Challenges.escapeChallenge();
       expect(s.charAt(0)).toBe("\\");
       expect(s.charAt(1)).toBe('"');
@@ -14,14 +14,14 @@ describe ("1 Foundations", () => {
       expect(s.length).toBe(8);
    });
 
-   xtest("addLineNumbers", () => {
+   test("addLineNumbers", () => {
       expect(Challenges.addLineNumbers("Hello\nWorld\n!")).toBe("1 Hello\n2 World\n3 !");
       expect(Challenges.addLineNumbers("")).toBe("1 ");
       expect(Challenges.addLineNumbers("A")).toBe("1 A");
       expect(Challenges.addLineNumbers(".\n.\n.")).toBe("1 .\n2 .\n3 .");
    })
 
-   xtest("jstypeof", () => {
+   test("jstypeof", () => {
       expect(Challenges.jstypeof("")).toBe("string");
       expect(Challenges.jstypeof(null)).toBe("null");
       expect(Challenges.jstypeof(() => {})).toBe("object");

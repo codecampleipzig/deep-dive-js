@@ -14,11 +14,17 @@ module.exports = {
 
 // Return this string \"'``'"\
 function escapeChallenge() {
+   return String("\\\"\'\`\`\'\"\\");
 }
 
 // Add line numbers to the beginning of each line:
 // e.g. addLineNumbers("Hello\nWorld\n!") -> "1 Hello\n2 World\n3 !"
 function addLineNumbers(text) {
+   let array = text.split("\n");
+   for (let i = 0; i < array.length; i++) {
+      array[i] = `${i+1} ${array[i]}`;
+   }
+   return array.join("\n");
 }
 
 // A bugfree version of typeof
@@ -26,10 +32,20 @@ function addLineNumbers(text) {
 //    typeof null -> "object", but jstypeof(null) -> "null"
 //    typeof () => {} -> "function", but jstypeof(() => {}) -> "object"
 function jstypeof(value) {
+   if (value === null) {
+      return "null";
+   } else if (typeof value === "function") {
+      return "object";
+   } else {
+   return typeof value;
+   }
 }
+
 
 // Return a random number in the range min (inclusive) to max (exclusive)
 function randomNumber(min, max) {
+   
+   return Math.random()
 }
 
 // Return a random integer between min (inclusive) and max (exclusive)
