@@ -45,12 +45,21 @@ function randomInt(min, max) {
 // If any of the arguments is a string convert them first to a number using parseFloat.
 // If the conversion fails, throw an exception;
 function add(lhs, rhs) {
-   typeof(lhs && rhs) === number ? return (lhs + rhs) : throw new Error ("No numbers!");
-
+   function parser(number1, number2){
+      return parseFloat(number1) + praseFloat(number2)
+   };
+   return typeof lhs === "number" && typeof rhs === "number" ? lhs + rhs : parser(lhs, rhs);
 }
 
 // Print all the numbers from 1 to 100 with two exceptions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead. For numbers that are divisible by both 5 and 3 print "FizzBuzz".
 function fizzBuzz() {
+   while (i <= 100){
+      if(i % 3 === 0){
+         console.log("Fizz");
+      }else if(i % 5 === 0 && i % 3 != 0){
+         console.log("Buzz") 
+      }else(console.log(i))
+   }
 }
 
 // Return a greeting string for the specified language
@@ -59,11 +68,21 @@ function fizzBuzz() {
 // greeting("Carolin", "German") -> "Hallo Carolin!"
 // Throw an exception if the language is not known
 function greeting(name, language) {
+   if (language == "English"){
+      return "Hello " + name;
+   } else if (language == "French"){
+      return "Salut " + name;
+   } else if (language == "German"){
+      return "Hallo " + name;
+   } else{
+      throw new Error ("The Language is not known bro.")
+   }
 }
 
 // Return a random string of lowercase ASCII characters.
 // Notes: Take a look at the string method fromCodePoint()
 function randomLowerCaseString(length) {
+   
 }
 
 // Given a Javascript binding, return whether or not it is a var binding.
