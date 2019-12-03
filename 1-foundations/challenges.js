@@ -22,6 +22,7 @@ function escapeChallenge() {
 function addLineNumbers(text) {
    const lines = text.split("\n");
    let output = "";
+   // TODO: take a look at Array.prototype.join
    for(let i = 0; i < lines.length; i++) {
       const line = i + 1;
       output += `${line} ${lines[i]}`;
@@ -41,6 +42,7 @@ function jstypeof(value) {
 // 
 function randomNumber(min, max) {
    if ( min >= max) {
+      // TODO: throw an exception
       return "max has to be greater min";
    }
    const range = max - min;
