@@ -67,7 +67,7 @@ true == "true";
 
    Answer
 
-10. Rewrite this while loops as a for loop
+10. Rewrite this while loop as a for loop
 
 ```
 let i = 0;
