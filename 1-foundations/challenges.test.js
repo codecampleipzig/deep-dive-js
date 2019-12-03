@@ -65,7 +65,7 @@ describe ("1 Foundations", () => {
       expect (() => {Challenges.add(null, 0)}).toThrow();
    });
 
-   xtest("fizzBuzz", () => {
+   test("fizzBuzz", () => {
       const consoleLog = console.log;
       let logOutput = ""
       console.log = (msg) => {
@@ -78,7 +78,7 @@ describe ("1 Foundations", () => {
       console.log = consoleLog;
    });
 
-   xtest("greeting", () => {
+   test("greeting", () => {
       expect(Challenges.greeting("Anne", "English")).toBe("Hello Anne!");
       expect(Challenges.greeting("Bob", "French")).toBe("Salut Bob!");
       expect(Challenges.greeting("Carolin", "German")).toBe("Hallo Carolin!");
@@ -87,18 +87,18 @@ describe ("1 Foundations", () => {
       })
    });
 
-   xtest("randomLowerCase", () => {
+   test("randomLowerCase", () => {
       const s = Challenges.randomLowerCaseString(10);
       expect(s.length).toBe(10);
       expect(s.split().every(c => /[a-z]/.test(c)));
    });
 
-   xtest("isVarBinding", () => {
+   test("isVarBinding", () => {
       expect(Challenges.isVarBinding("var x = 10;"));
       expect(!Challenges.isVarBinding("let x = 10;"));
    })
 
-   xtest("fileExtension", () => {
+   test("fileExtension", () => {
       expect(Challenges.fileExtension("Readme.md")).toBe("md");
       expect(Challenges.fileExtension("Readme.test")).toBe("test");
       expect(Challenges.fileExtension("Readme")).toBe("");
