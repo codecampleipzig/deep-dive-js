@@ -25,6 +25,7 @@ describe ("1 Foundations", () => {
       expect(Challenges.jstypeof("")).toBe("string");
       expect(Challenges.jstypeof(null)).toBe("null");
       expect(Challenges.jstypeof(() => {})).toBe("object");
+      expect(Challenges.jstypeof((x) => {})).toBe("object");
       expect(Challenges.jstypeof({})).toBe("object");
       expect(Challenges.jstypeof(0)).toBe("number");
       expect(Challenges.jstypeof(true)).toBe("boolean");
@@ -78,7 +79,7 @@ describe ("1 Foundations", () => {
       console.log = consoleLog;
    });
 
-   xtest("greeting", () => {
+   test("greeting", () => {
       expect(Challenges.greeting("Anne", "English")).toBe("Hello Anne!");
       expect(Challenges.greeting("Bob", "French")).toBe("Salut Bob!");
       expect(Challenges.greeting("Carolin", "German")).toBe("Hallo Carolin!");
@@ -87,7 +88,7 @@ describe ("1 Foundations", () => {
       })
    });
 
-   xtest("randomLowerCase", () => {
+   test("randomLowerCase", () => {
       const s = Challenges.randomLowerCaseString(10);
       expect(s.length).toBe(10);
       expect(s.split().every(c => /[a-z]/.test(c)));

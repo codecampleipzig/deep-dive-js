@@ -23,10 +23,10 @@ function addLineNumbers(text) {
    let result = "";
    let lines = text.split("\n")
    for (let lineNumber = 0; lineNumber < lines.length; lineNumber++) {
-      if (lineNumber != lines.length - 1){
-      result += `${lineNumber + 1} ${lines[lineNumber]}\n`;
-       } else {
-      result += `${lineNumber + 1} ${lines[lineNumber]}`;
+      if (lineNumber != lines.length - 1) {
+         result += `${lineNumber + 1} ${lines[lineNumber]}\n`;
+      } else {
+         result += `${lineNumber + 1} ${lines[lineNumber]}`;
       }
    }
    return result
@@ -37,51 +37,55 @@ function addLineNumbers(text) {
 //    typeof null -> "object", but jstypeof(null) -> "null"
 //    typeof () => {} -> "function", but jstypeof(() => {}) -> "object"
 function jstypeof(value) {
-   if ( value === null)
-   return "null"
-   if (value == "() => {}")
-   return "object"
-   else
-   return typeof value
+   if (value === null) {
+      return "null"
+   }
+   if (typeof value == "function") {
+      return "object"
+   }
+   else {
+      return typeof value
+   }
 }
 
 // Return a random number in the range min (inclusive) to max (exclusive)
 function randomNumber(min, max) {
    return Math.random() * (max - min) + min;
- }
+}
 
 
 // Return a random integer between min (inclusive) and max (exclusive)
 // You may assume that min and max are both integers.
 function randomInt(min, max) {
-   return Math.floor((Math.random() * (max - min)) + min);
-}
+   return Math.floor(randomNumber(min, max));
+};
 
 // Write a function that takes two arguments and returns their sum.
 // If any of the arguments is a string convert them first to a number using parseFloat.
 // If the conversion fails, throw an exception;
 function add(lhs, rhs) {
-   if(parseFloat(lhs) && parseFloat(rhs) != "NaN")
-   return parseFloat(lhs) + parseFloat(rhs)
-   else
-   throw(`Fail to sum: ${lhs} is ${parseFloat(lhs)} and ${lhs} is ${parseFloat(lhs)}`)
-}
+   if (parseFloat(lhs) && parseFloat(rhs) != "NaN") {
+      return parseFloat(lhs) + parseFloat(rhs)
+   } else {
+      throw (`Fail to sum: ${lhs} is ${parseFloat(lhs)} and ${lhs} is ${parseFloat(lhs)}`)
+   }
+};
 
 // Print all the numbers from 1 to 100 with two exceptions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead. For numbers that are divisible by both 5 and 3 print "FizzBuzz".
 function fizzBuzz() {
-   let counter = 0
-    while (counter < 100) {
-        counter += 1;
-        if ( counter%3 == 0 && counter%5 == 0){
-            console.log ("FizzBuzz");
-        } else if (counter%3 == 0) {
-            console.log ("Fizz");
-        } else if (counter%5 == 0){
-            console.log ("Buzz");
-        } else {
-            console.log (counter)
-        }
-    }
+   let counter = 1
+   while (counter <= 100) {
+      if (counter % 3 == 0 && counter % 5 == 0) {
+         console.log("FizzBuzz");
+      } else if (counter % 3 == 0) {
+         console.log("Fizz");
+      } else if (counter % 5 == 0) {
+         console.log("Buzz");
+      } else {
+         console.log(counter)
+      }
+      counter += 1;
+   }
 }
 
 // Return a greeting string for the specified language
@@ -90,13 +94,28 @@ function fizzBuzz() {
 // greeting("Carolin", "German") -> "Hallo Carolin!"
 // Throw an exception if the language is not known
 
-function greeting(name, language) {
 
+function greeting(name, language) {
+   let greetings = {
+      English: "Hello",
+      French: "Salut",
+      German: "Hallo"
+   }
+   if (greetings[language]) {
+      return `${greetings[language]} ${name}!`
+   } else {
+      throw (`Please, enter a valid language`)
+   }
 }
 
 // Return a random string of lowercase ASCII characters.
 // Notes: Take a look at the string method fromCodePoint()
 function randomLowerCaseString(length) {
+   let result = "";
+   for (let i = 1; i <= length; i++) {
+      result += String.fromCodePoint(randomInt(97,123))
+   }
+   return result
 }
 
 // Given a Javascript binding, return whether or not it is a var binding.
