@@ -2,6 +2,8 @@
 42;
 3.5;
 
+//4
+
 // Scientific notation
 1e6;
 3.5e2;
