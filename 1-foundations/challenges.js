@@ -38,13 +38,20 @@ function randomNumber(min, max) {
 // Return a random integer between min (inclusive) and max (exclusive)
 // You may assume that min and max are both integers.
 function randomInt(min, max) {
-   return Math.floor(Math.random() * (Math.floor(max)-Math.floor(mix)) + Math.floor(mix));
+   return Math.floor(Math.random() * (Math.floor(max)-Math.floor(min)) + Math.floor(min));
 }
 
 // Write a function that takes two arguments and returns their sum.
 // If any of the arguments is a string convert them first to a number using parseFloat.
 // If the conversion fails, throw an exception;
 function add(lhs, rhs) {
+   if(parseFloat(lhs) && parseFloat(rhs) != NaN) {
+      return parseFloat(lhs) + parseFloat(rhs);
+   }
+   else {
+      throw ("Error")
+   }
+
 }
 
 // Print all the numbers from 1 to 100 with two exceptions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead. For numbers that are divisible by both 5 and 3 print "FizzBuzz".

@@ -58,7 +58,7 @@ describe ("1 Foundations", () => {
       }
    })
 
-   xtest("add", () => {
+   test("add", () => {
       expect (Challenges.add(1, 2)).toBe(3);
       expect (Challenges.add("1", 2)).toBe(3);
       expect (Challenges.add(1, "2")).toBe(3);
