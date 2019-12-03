@@ -14,6 +14,7 @@ module.exports = {
 
 // Return this string \"'``'"\
 function escapeChallenge() {
+   return "\"\'\`\`\'\""
 }
 
 // Add line numbers to the beginning of each line:
@@ -30,6 +31,7 @@ function jstypeof(value) {
 
 // Return a random number in the range min (inclusive) to max (exclusive)
 function randomNumber(min, max) {
+   return 
 }
 
 // Return a random integer between min (inclusive) and max (exclusive)
