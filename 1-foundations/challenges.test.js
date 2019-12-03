@@ -1,7 +1,7 @@
 const Challenges = require ("./challenges")
 
 describe ("1 Foundations", () => {
-   xtest("escapeChallenge", () => {
+   test("escapeChallenge", () => {
       const s = Challenges.escapeChallenge();
       expect(s.charAt(0)).toBe("\\");
       expect(s.charAt(1)).toBe('"');
@@ -31,7 +31,7 @@ describe ("1 Foundations", () => {
       expect(Challenges.jstypeof(undefined)).toBe("undefined");
    });
 
-   xtest("randomNumber", () => {
+   test("randomNumber", () => {
       for (let i = 0; i < 100; i++) {
          const min = -4.123;
          const max = 24.68;
@@ -44,7 +44,7 @@ describe ("1 Foundations", () => {
       }
    })
 
-   xtest("randomInt", () => {
+   test("randomInt", () => {
       for (let i = 0; i < 100; i++) {
          const min = -4;
          const max = 24;
@@ -65,7 +65,7 @@ describe ("1 Foundations", () => {
       expect (() => {Challenges.add(null, 0)}).toThrow();
    });
 
-   xtest("fizzBuzz", () => {
+   test("fizzBuzz", () => {
       const consoleLog = console.log;
       let logOutput = ""
       console.log = (msg) => {
