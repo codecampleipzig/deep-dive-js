@@ -20,6 +20,12 @@ function escapeChallenge() {
 // Add line numbers to the beginning of each line:
 // e.g. addLineNumbers("Hello\nWorld\n!") -> "1 Hello\n2 World\n3 !"
 function addLineNumbers(text) {
+   var array = text.split("\n");
+   result = "1 " + array[0];
+   for (x=1; x<array.length; x++) {
+      result = result + "\n" + (x+1) + " " + array[x];
+   }
+   return result;
 }
 
 // A bugfree version of typeof
@@ -27,11 +33,19 @@ function addLineNumbers(text) {
 //    typeof null -> "object", but jstypeof(null) -> "null"
 //    typeof () => {} -> "function", but jstypeof(() => {}) -> "object"
 function jstypeof(value) {
-}
+   if (value === null) {
+      return "null";
+   };
+   if (typeof(value) == "function") {
+      return "object";
+   };
+   return typeof(value);
+   };
 
 // Return a random number in the range min (inclusive) to max (exclusive)
 function randomNumber(min, max) {
-}
+   return Math.random() * (max - min) + min;
+};
 
 // Return a random integer between min (inclusive) and max (exclusive)
 // You may assume that min and max are both integers.
