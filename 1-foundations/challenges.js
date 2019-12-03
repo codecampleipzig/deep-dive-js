@@ -14,7 +14,8 @@ module.exports = {
 
 // Return this string \"'``'"\
 function escapeChallenge() {
-}
+   return "\\\"\'\`\`\'\"\\"
+};
 
 // Add line numbers to the beginning of each line:
 // e.g. addLineNumbers("Hello\nWorld\n!") -> "1 Hello\n2 World\n3 !"

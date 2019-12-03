@@ -1,7 +1,7 @@
 const Challenges = require ("./challenges")
 
 describe ("1 Foundations", () => {
-   xtest("escapeChallenge", () => {
+   test("escapeChallenge", () => {
       const s = Challenges.escapeChallenge();
       expect(s.charAt(0)).toBe("\\");
       expect(s.charAt(1)).toBe('"');
