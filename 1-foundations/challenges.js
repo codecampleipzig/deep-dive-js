@@ -31,7 +31,11 @@ function addLineNumbers(text) {
 // Notes:
 //    typeof null -> "object", but jstypeof(null) -> "null"
 //    typeof () => {} -> "function", but jstypeof(() => {}) -> "object"
-function jstypeof(value) {}
+function jstypeof(value) {
+   if (value === null) return "null";
+   if (typeof value == "function") return "object";
+   return typeof value;
+}
 
 // Return a random number in the range min (inclusive) to max (exclusive)
 function randomNumber(min, max) {
@@ -99,7 +103,9 @@ function randomLowerCaseString(length) {
 // Given a Javascript binding, return whether or not it is a var binding.
 // isVarBinding("var x = 10;") -> true
 // isVarBinding("let x = 10;") -> false
-function isVarBinding(binding) {}
+function isVarBinding(binding) {
+   return binding.startsWith("var");
+}
 
 // Return the file extension from a filename or the empty string
 // fileExtension ("Readme.md") -> "md"
