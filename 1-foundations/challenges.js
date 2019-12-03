@@ -30,17 +30,23 @@ function jstypeof(value) {
 
 // Return a random number in the range min (inclusive) to max (exclusive)
 function randomNumber(min, max) {
+ return Math.random() * (max - min) + min;
 }
 
 // Return a random integer between min (inclusive) and max (exclusive)
 // You may assume that min and max are both integers.
 function randomInt(min, max) {
+   const min = Math.ceil(min);
+   const max = Math.floor(max);
+   return Math.random() (max - min) + min;
 }
 
 // Write a function that takes two arguments and returns their sum.
 // If any of the arguments is a string convert them first to a number using parseFloat.
 // If the conversion fails, throw an exception;
 function add(lhs, rhs) {
+   typeof(lhs && rhs) === number ? return (lhs + rhs) : throw new Error ("No numbers!");
+
 }
 
 // Print all the numbers from 1 to 100 with two exceptions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead. For numbers that are divisible by both 5 and 3 print "FizzBuzz".
