@@ -59,10 +59,6 @@ function sortChallenge(values) {
 // Implement a function equivalent to Array.prototype.find with a loop
 // If no element satisfies the condition return undefined
 function find(array, predicate) {
-   // for (let i = 0; i < array.length; i++) {
-   //   let  x = array[i];
-   //   return predicate ? x : undefined;
-   // }
 }
 
 // Implement lastIndexOf with a loop
@@ -89,25 +85,29 @@ function everyContainsA(strings) {
 
 // Write a function that takes in an array of strings and checks whether one of the strings contains a number
 function someContainsNumber(strings) {
-   return strings.find(x => x.indexOf(0) != -1 || x.indexOf(1) != -1 || x.indexOf(2) != -1 || x.indexOf(3) != -1 || x.indexOf(4) != -1 || x.indexOf(5) != -1 ||x.indexOf(6) != -1 || x.indexOf(7) != -1 ||x.indexOf(8) != -1 ||x.indexOf(9) != -1)
+   return strings.some(x => x.indexOf(0) != -1 || x.indexOf(1) != -1 || x.indexOf(2) != -1 || x.indexOf(3) != -1 || x.indexOf(4) != -1 || x.indexOf(5) != -1 ||x.indexOf(6) != -1 || x.indexOf(7) != -1 ||x.indexOf(8) != -1 ||x.indexOf(9) != -1)
 }
 
 // Implement Array.prototype.some with a loop
 function some(array, condition) {
-
 }
 
 // Create a function that adds a string ending to each member in an array.
 // e.g. addEnding(["clever", "meek", "hurried", "nice"], "ly")
 // -> ["cleverly", "meekly", "hurriedly", "nicely"]
 function addEnding(array, ending) {
-
+   return array.map(x => `${x}${ending}`)
 }
 
 // Create a function to remove all null values from an array.
 // e.g. removeNull(["a", null, "b", null]) -> ["a", "b"]
 function removeNull(array) {
-
+   const result = [];
+   return array.filter((x) => {
+      if (x !== null) {
+         return result.push(x)
+      }
+   })
 }
 
 // Using reduce in combination with the concat method, write a function to flatten an array of arrays into a single array, that has all the elements of the original orrays

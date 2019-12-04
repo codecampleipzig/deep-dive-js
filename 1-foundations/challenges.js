@@ -103,7 +103,11 @@ function greeting(name, language) {
 // Return a random string of lowercase ASCII characters.
 // Notes: Take a look at the string method fromCodePoint()
 function randomLowerCaseString(length) {
-
+   let str = "";
+   for (let i = 0; i < length; i++) {
+      str += `${(String.fromCodePoint(Math.floor(Math.random() * (129 - 97) + 97)))}`;
+   }
+   return str;
 }
 
 // Given a Javascript binding, return whether or not it is a var binding.

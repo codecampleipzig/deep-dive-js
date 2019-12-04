@@ -87,7 +87,7 @@ describe ("1 Foundations", () => {
       })
    });
 
-   xtest("randomLowerCase", () => {
+   test("randomLowerCase", () => {
       const s = Challenges.randomLowerCaseString(10);
       expect(s.length).toBe(10);
       expect(s.split().every(c => /[a-z]/.test(c)));

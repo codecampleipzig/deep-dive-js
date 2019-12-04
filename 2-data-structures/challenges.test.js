@@ -76,14 +76,14 @@ describe ("2 Data Structures", () => {
       expect(some(['A', 'B', 'C'], v => false)).toBeFalsy();
    })
 
-   xtest('addEnding', () => {
+   test('addEnding', () => {
       expect(addEnding(["clever", "meek", "hurried", "nice"], "ly"))
       .toEqual(["cleverly", "meekly", "hurriedly", "nicely"]);
       expect(addEnding(["new", "pander", "scoop"], "er"))
       .toEqual(["newer", "panderer", "scooper"])
    });
 
-   xtest('removeNull', () => {
+   test('removeNull', () => {
       expect(removeNull([])).toEqual([]);
       expect(removeNull(['A', 'B', 'C'])).toEqual(['A', 'B', 'C']);
       expect(removeNull([null, 'A', null, 'B', null, 'C', null])).toEqual(['A', 'B', 'C']);
