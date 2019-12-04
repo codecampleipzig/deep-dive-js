@@ -85,13 +85,11 @@ cities.map(city => ({...city, country: "Germany"}));
 // reduce
 // King of array operations
 
-// Take this for loop
-
-function reduceImpl(array, operationFunction, initialValue) {
+function reduceImpl(array, loopBodyFunction, initialValue) {
    let result = initialValue;
    for (let i = 0; i < array.length; ++i) {
       const element = array[i];
-      result = operationFunction(result, element, i)
+      result = loopBodyFunction(result, element, i)
    }
    return result;
 }
