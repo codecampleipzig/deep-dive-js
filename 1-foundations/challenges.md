@@ -74,7 +74,7 @@ true != "true";
    let can be updated but not be redefined
    const can't be updated
 
-10. Rewrite this while loops as a for loop
+10. Rewrite this while loop as a for loop
 
 ```
 for (let i = 1; i <= 100; i *= 2) {
