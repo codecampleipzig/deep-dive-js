@@ -34,10 +34,10 @@ function addLineNumbers(text) {
 //    typeof () => {} -> "function", but jstypeof(() => {}) -> "object"
 function jstypeof(value) {
    if (value === null) {
-      return "null"
+      return "null";
    }
    else if(typeof value == "function") {
-      return "object"
+      return "object";
    }
    return typeof value;
 }
@@ -61,7 +61,7 @@ function add(lhs, rhs) {
       return parseFloat(lhs) + parseFloat(rhs);
    }
    else {
-      throw ("Error")
+      throw new Error ("Error");
    }
 
 }

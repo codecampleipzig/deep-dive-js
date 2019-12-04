@@ -55,7 +55,6 @@ function sortChallenge(values) {
    })
    return values;
 }
-sortChallenge(['a', true, 3])
 
 module.exports = {
    spliceChallenge,
