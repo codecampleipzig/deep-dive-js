@@ -58,10 +58,69 @@ function sortChallenge(values) {
    // return result
 }
 
+// Implement a function equivalent to Array.prototype.find with a loop
+// If no element satisfies the condition return undefined
+function find(array, predicate) {
+
+}
+
+// Implement lastIndexOf with a loop
+function lastIndexOf(array, element) {
+
+}
+
+// Implement includes using indexOf
+function includes(array, element) {
+
+}
+
+// Write a function that takes in an array of strings and checks whether each of the strings contain the letter 'A'
+function everyContainsA(strings) {
+
+}
+// Write a function that takes in an array of strings and checks whether one of the strings contains a number
+function someContainsNumber(strings) {
+
+}
+
+// Implement Array.prototype.some with a loop
+function some(array, condition) {
+
+}
+
+// Create a function that adds a string ending to each member in an array.
+// e.g. addEnding(["clever", "meek", "hurried", "nice"], "ly")
+// -> ["cleverly", "meekly", "hurriedly", "nicely"]
+function addEnding(array, ending) {
+
+}
+
+// Create a function to remove all null values from an array.
+// e.g. removeNull(["a", null, "b", null]) -> ["a", "b"]
+function removeNull(array) {
+
+}
+
+// Using reduce in combination with the concat method, write a function to flatten an array of arrays into a single array, that has all the elements of the original orrays
+// e.g. flatten([['a', 'b'], ['c', 'd'], ['e']])
+// -> ['a', 'b', 'c', 'd', 'e']
+function flatten(array) {
+
+}
+
 module.exports = {
    spliceChallenge,
    sliceSpreadChallenge,
    highScore,
    sortChallenge,
    entriesStartingWith,
+   find,
+   lastIndexOf,
+   includes,
+   everyContainsA,
+   someContainsNumber,
+   some,
+   addEnding,
+   removeNull,
+   flatten
 };
