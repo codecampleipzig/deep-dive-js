@@ -17,9 +17,12 @@ Example: Find a book in a bookshelf
 - Logarithmic: O(log(n)) 
    Check the sorted bookshelf. Check one in the middle, decide to go left or right, repeat.
    If n = 128, second step only 64 books are left. So 7 steps needed to find your book.
+   -> binary search
 - Quadratic: O(n^2)
-   Naive sorting algorithm
+   - Naive sorting algorithm
+   -> sorting a deck of playing cards (using merge sort)
 - Exponential: O(2^n)
+   - brute force password check
 
 Complexity of sorting: O(log(n) * n)
    Nothing is faster than that. Read More!
