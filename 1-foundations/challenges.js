@@ -13,7 +13,7 @@ module.exports = {
 };
 
 // Return this string \"'``'"\
-function escapeChallenge() {
+function escapeChallenge() { // Check
   return "\\\"'``'\"\\";
 }
 
@@ -22,7 +22,7 @@ function escapeChallenge() {
 
 // var text = "Hello\\nWorld\\n !"
 
-function addLineNumbers(text) {
+function addLineNumbers(text) { // Check
   return text.split("\n").map((line, index) => `${index + 1} ${line}`).join("\n");
   
 }
@@ -31,20 +31,20 @@ function addLineNumbers(text) {
 // Notes:
 //    typeof null -> "object", but jstypeof(null) -> "null"
 //    typeof () => {} -> "function", but jstypeof(() => {}) -> "object"
-function jstypeof(value) {
+function jstypeof(value) { // Check, maybe TODO: add braces around the if blocks
    if (value === null) return "null";
    if (typeof value == "function") return "object";
    return typeof value;
 }
 
 // Return a random number in the range min (inclusive) to max (exclusive)
-function randomNumber(min, max) {
+function randomNumber(min, max) { // Check
   return Math.random() * (max - min) + min;
 }
 
 // Return a random integer between min (inclusive) and max (exclusive)
 // You may assume that min and max are both integers.
-function randomInt(min, max) {
+function randomInt(min, max) { // Check
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
@@ -56,14 +56,14 @@ function randomInt(min, max) {
 function add(lhs, rhs) {
   lhs = parseFloat(lhs);
   rhs = parseFloat(rhs);
-  if (lhs == NaN || rhs == NaN) {
+  if (lhs == NaN || rhs == NaN) { // TODO: This check doesn't work since NaN == NaN is true
     throw new Error();
   } else {
     return lhs + rhs;
   }
 
   // Print all the numbers from 1 to 100 with two exceptions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead. For numbers that are divisible by both 5 and 3 print "FizzBuzz".
-  function fizzBuzz() {
+  function fizzBuzz() { // check
     for (let i = 1; i <= 100; i = i + 1) {
       if (i % 3 == 0 && i % 5 == 0) {
         console.log("fizzbuzz");
@@ -82,7 +82,7 @@ function add(lhs, rhs) {
 // greeting("Bob", "French") -> "Salut Bob!"
 // greeting("Carolin", "German") -> "Hallo Carolin!"
 // Throw an exception if the language is not known
-function greeting(name, language) {
+function greeting(name, language) { // TODO: It will only work for the three test cases. Use string interpolation to insert the name directly in the output string
   if (name == "Anne" && language == "English") {
     return "Hello Anne!";
   } else if (name == "Bob" && language == "French") {
@@ -96,14 +96,14 @@ function greeting(name, language) {
 
 // Return a random string of lowercase ASCII characters.
 // Notes: Take a look at the string method fromCodePoint()
-function randomLowerCaseString(length) {
+function randomLowerCaseString(length) { // TODO: length is not an object
   return length.fromCodePoint();
 }
 
 // Given a Javascript binding, return whether or not it is a var binding.
 // isVarBinding("var x = 10;") -> true
 // isVarBinding("let x = 10;") -> false
-function isVarBinding(binding) {
+function isVarBinding(binding) { // Check
    return binding.startsWith("var");
 }
 
@@ -111,9 +111,9 @@ function isVarBinding(binding) {
 // fileExtension ("Readme.md") -> "md"
 // fileExtension ("index.js") -> "js"
 // fileExtension ("index") => ""
-function fileExtension(filename) {
+function fileExtension(filename) { // TODO: lastIndexOf returns a number not a string. It returns -1 if the element can't be found
   let index = filename.lastIndexOf(".");
-  if (index == "") {
+  if (index == "") { 
     return "";
   } else {
     return filename.substring(index + 1);
