@@ -145,13 +145,13 @@ function flatten(array) {
 }
 
 // Add destructuring to the parameter list to make this function return user.email
-function getEmail(user) {
+function getEmail({email}) {
    return email;
 }
 
 // Use destructuring and the spread syntax: return the user object, but with the email swapped out for newEmail
-function resetEmail(user, newEmail) {
-   return {}
+function resetEmail({email, ...user}, newEmail) {
+   return {...user, email: newEmail}
 }
 
 // Object iteration: check that all keys in the object are truthy
@@ -159,6 +159,7 @@ function resetEmail(user, newEmail) {
 // allValuesAreTruthy({a: 1, b: 0}) -> false
 // allValuesAreTruthy({a: 1, b: ""}) -> false
 function allValuesAreTruthy(object) {
+   return Object.values(object).every(v => v);
 }
 
 module.exports = {

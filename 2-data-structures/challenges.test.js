@@ -99,16 +99,16 @@ describe ("2 Data Structures", () => {
       expect(flatten([[1, 2], [], [3, 4], [5]])).toEqual([1, 2, 3, 4, 5]);
    })
 
-   xtest('getEmail', () => {
+   test('getEmail', () => {
       expect(getEmail({email: "info@me.com"})).toBe("info@me.com");
    })
-   xtest('resetEmail', () => {
+   test('resetEmail', () => {
       expect(resetEmail({email: "oldEmail"}, "newEmail")).toEqual({email: "newEmail"});
       expect(resetEmail({email: "oldEmail", name: "user"}, "newEmail")).toEqual({email: "newEmail", name: "user"});
    })
 
-   xtest('allValuesAreTruthy', () => {
-      expect(allallValuesAreTruthy({a: 1, b: 2})).toBe(true);
+   test('allValuesAreTruthy', () => {
+      expect(allValuesAreTruthy({a: 1, b: 2})).toBe(true);
       expect(allValuesAreTruthy({a: 1, b: 0})).toBe(false);
       expect(allValuesAreTruthy({a: 1, b: false})).toBe(false);
       expect(allValuesAreTruthy({a: 1, b: null})).toBe(false);
