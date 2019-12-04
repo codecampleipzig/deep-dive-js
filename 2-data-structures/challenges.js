@@ -30,6 +30,7 @@ function sliceSpreadChallenge() {
    return [...x.slice(1, 3), ...z.slice(1, 3), ...y.slice(0, 3)]
 }
 
+// This is a hard one:
 // Sort an array of values, by type in this order: First booleans, than numbers, than strings.
 // Apart from that, the order is undefined
 // sortChallenge(['a', true, 3]) -> [true, 3, 'a']
@@ -95,6 +96,8 @@ function includes(array, element) {
 function everyContainsA(strings) {
    return strings.every(s => s.includes('A'))
 }
+
+// A bit hard, except if you use a regex.
 // Write a function that takes in an array of strings and checks whether one of the strings contains a number
 function someContainsNumber(strings) {
    function containsNumber(string) {
@@ -141,6 +144,23 @@ function flatten(array) {
    }, [])
 }
 
+// Add destructuring to the parameter list to make this function return user.email
+function getEmail(user) {
+   return email;
+}
+
+// Use destructuring and the spread syntax: return the user object, but with the email swapped out for newEmail
+function resetEmail(user, newEmail) {
+   return {}
+}
+
+// Object iteration: check that all keys in the object are truthy
+// allValuesAreTruthy({a: 1, b: 2}) -> true
+// allValuesAreTruthy({a: 1, b: 0}) -> false
+// allValuesAreTruthy({a: 1, b: ""}) -> false
+function allValuesAreTruthy(object) {
+}
+
 module.exports = {
    spliceChallenge,
    sliceSpreadChallenge,
@@ -155,5 +175,8 @@ module.exports = {
    some,
    addEnding,
    removeNull,
-   flatten
+   flatten,
+   getEmail,
+   resetEmail,
+   allValuesAreTruthy
 };

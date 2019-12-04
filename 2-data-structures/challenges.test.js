@@ -12,7 +12,10 @@ const {
    some,
    addEnding,
    removeNull,
-   flatten
+   flatten,
+   getEmail,
+   resetEmail,
+   allValuesAreTruthy
 } = require("./challenges")
 
 describe ("2 Data Structures", () => {
@@ -95,4 +98,23 @@ describe ("2 Data Structures", () => {
       expect(flatten([[1, 2], [3, 4], [5]])).toEqual([1, 2, 3, 4, 5]);
       expect(flatten([[1, 2], [], [3, 4], [5]])).toEqual([1, 2, 3, 4, 5]);
    })
+
+   xtest('getEmail', () => {
+      expect(getEmail({email: "info@me.com"})).toBe("info@me.com");
+   })
+   xtest('resetEmail', () => {
+      expect(resetEmail({email: "oldEmail"}, "newEmail")).toEqual({email: "newEmail"});
+      expect(resetEmail({email: "oldEmail", name: "user"}, "newEmail")).toEqual({email: "newEmail", name: "user"});
+   })
+
+   xtest('allValuesAreTruthy', () => {
+      expect(allallValuesAreTruthy({a: 1, b: 2})).toBe(true);
+      expect(allValuesAreTruthy({a: 1, b: 0})).toBe(false);
+      expect(allValuesAreTruthy({a: 1, b: false})).toBe(false);
+      expect(allValuesAreTruthy({a: 1, b: null})).toBe(false);
+      expect(allValuesAreTruthy({a: 1, b: ""})).toBe(false);
+      expect(allValuesAreTruthy({a: 1, b: NaN})).toBe(false);
+      expect(allValuesAreTruthy({})).toBe(true);
+   })
+
 });
