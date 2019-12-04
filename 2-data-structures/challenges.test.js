@@ -108,7 +108,7 @@ describe ("2 Data Structures", () => {
    })
 
    xtest('allValuesAreTruthy', () => {
-      expect(allallValuesAreTruthy({a: 1, b: 2})).toBe(true);
+      expect(allValuesAreTruthy({a: 1, b: 2})).toBe(true);
       expect(allValuesAreTruthy({a: 1, b: 0})).toBe(false);
       expect(allValuesAreTruthy({a: 1, b: false})).toBe(false);
       expect(allValuesAreTruthy({a: 1, b: null})).toBe(false);
