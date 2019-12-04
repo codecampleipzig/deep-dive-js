@@ -22,10 +22,9 @@ function escapeChallenge() {
 function addLineNumbers(text) {
    const array = text.split("\n");
    let result = "";
-   for (let i =0; i< array.length; i++) {
-      result = `${result}${i+1} ${array[i]}\n`
+   for (let i = 0; i < array.length; i++) {
+      result += `${i == 0 ? "" : "\n"}${ i+1 } ${ array[i] }`
    }
-   result = result.slice(0, result.length - 1)
    return result;
 }
 
