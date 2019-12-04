@@ -44,23 +44,40 @@ function jstypeof(value) {
 
 // Return a random number in the range min (inclusive) to max (exclusive)
 function randomNumber(min, max) {
-   
-   return Math.random()
+   return Math.random() * (max - min) + min;
 }
 
 // Return a random integer between min (inclusive) and max (exclusive)
 // You may assume that min and max are both integers.
 function randomInt(min, max) {
+   return Math.floor(Math.random() * (max - min) + min);
 }
 
 // Write a function that takes two arguments and returns their sum.
 // If any of the arguments is a string convert them first to a number using parseFloat.
 // If the conversion fails, throw an exception;
 function add(lhs, rhs) {
+   lhs = parseFloat(lhs);
+   rhs = parseFloat(rhs);
+   if(isNaN(lhs) || isNaN(rhs)) {
+      throw new Error ('Parameter is not a number')   
+   }
+   return lhs + rhs;
 }
 
 // Print all the numbers from 1 to 100 with two exceptions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead. For numbers that are divisible by both 5 and 3 print "FizzBuzz".
 function fizzBuzz() {
+   for (let i = 1; i <= 100; i++) {
+      if (i%3 == 0) {
+         "Fizz";
+      }else if(i%5 == 0) {
+         "Buzz";
+      }else if (i%3 == 0 && i%5 == 0) {
+         "FizzBuzz";
+      }else{
+         return i;
+      }
+   }
 }
 
 // Return a greeting string for the specified language
@@ -69,6 +86,15 @@ function fizzBuzz() {
 // greeting("Carolin", "German") -> "Hallo Carolin!"
 // Throw an exception if the language is not known
 function greeting(name, language) {
+   const greetings = {
+      "English" : "Hello",
+      "French" : "Salut",
+      "German" : "Hallo"
+   }
+   if (!greetings[language]) {
+      throw new Error (`Sorry, I don't know ${language}`);
+   }
+   return `${greetings[language]} ${name}!`;
 }
 
 // Return a random string of lowercase ASCII characters.

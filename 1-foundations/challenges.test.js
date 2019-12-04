@@ -31,7 +31,7 @@ describe ("1 Foundations", () => {
       expect(Challenges.jstypeof(undefined)).toBe("undefined");
    });
 
-   xtest("randomNumber", () => {
+   test("randomNumber", () => {
       for (let i = 0; i < 100; i++) {
          const min = -4.123;
          const max = 24.68;
@@ -44,7 +44,7 @@ describe ("1 Foundations", () => {
       }
    })
 
-   xtest("randomInt", () => {
+   test("randomInt", () => {
       for (let i = 0; i < 100; i++) {
          const min = -4;
          const max = 24;
@@ -58,7 +58,7 @@ describe ("1 Foundations", () => {
       }
    })
 
-   xtest("add", () => {
+   test("add", () => {
       expect (Challenges.add(1, 2)).toBe(3);
       expect (Challenges.add("1", 2)).toBe(3);
       expect (Challenges.add(1, "2")).toBe(3);
@@ -78,7 +78,7 @@ describe ("1 Foundations", () => {
       console.log = consoleLog;
    });
 
-   xtest("greeting", () => {
+   test("greeting", () => {
       expect(Challenges.greeting("Anne", "English")).toBe("Hello Anne!");
       expect(Challenges.greeting("Bob", "French")).toBe("Salut Bob!");
       expect(Challenges.greeting("Carolin", "German")).toBe("Hallo Carolin!");
