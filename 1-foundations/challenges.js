@@ -102,7 +102,7 @@ function greeting(name, language) {
 
 // Return a random string of lowercase ASCII characters.
 // Notes: Take a look at the string method fromCodePoint()
-function randomLowerCaseString(length) {
+function randomLowerCaseString(length) { // check, maybe use the += operator
    let result = "";
    for (i=0; i<length; i++) {
       result = result + String.fromCodePoint(randomInt(97, 123));
@@ -113,7 +113,7 @@ function randomLowerCaseString(length) {
 // Given a Javascript binding, return whether or not it is a var binding.
 // isVarBinding("var x = 10;") -> true
 // isVarBinding("let x = 10;") -> false
-function isVarBinding(binding) {
+function isVarBinding(binding) { // TODO: you can also use .startsWith
 var search = binding.search("var");
 if (search == -1) {
    return false;
@@ -125,7 +125,7 @@ return true;
 // fileExtension ("Readme.md") -> "md"
 // fileExtension ("index.js") -> "js"
 // fileExtension ("index") => ""
-function fileExtension(filename) {
+function fileExtension(filename) { // TODO: What's with these kinds of filenames, that contain multiple dots: challenges.test.js
    var split = filename.split(".");
    if (split[1] == undefined) {
       return "";
