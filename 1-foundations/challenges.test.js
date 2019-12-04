@@ -78,7 +78,7 @@ describe ("1 Foundations", () => {
       console.log = consoleLog;
    });
 
-   xtest("greeting", () => {
+   test("greeting", () => {
       expect(Challenges.greeting("Anne", "English")).toBe("Hello Anne!");
       expect(Challenges.greeting("Bob", "French")).toBe("Salut Bob!");
       expect(Challenges.greeting("Carolin", "German")).toBe("Hallo Carolin!");

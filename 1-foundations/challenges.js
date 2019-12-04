@@ -19,8 +19,8 @@ function escapeChallenge() { // check
 
 // Add line numbers to the beginning of each line:
 // e.g. addLineNumbers("Hello\nWorld\n!") -> "1 Hello\n2 World\n3 !"
-function addLineNumbers(text) { // TODO: put space around operator
-   return text.split("\n").map((line, i) => `${i+1} ${line}`).join("\n");
+function addLineNumbers(text) {
+   return text.split("\n").map((line, i) => `${i + 1} ${line}`).join("\n");
 }
 
 // A bugfree version of typeof
@@ -71,15 +71,15 @@ function add(lhs, rhs) {  // check
 }
 
 // Print all the numbers from 1 to 100 with two exceptions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead. For numbers that are divisible by both 5 and 3 print "FizzBuzz".
-function fizzBuzz() { // TODO: put space around operators
+function fizzBuzz() {
    for (let i = 1; i <= 100; i++) {
-      if (i%5 == 0 && i%3 == 0) {
+      if (i % 5 == 0 && i % 3 == 0) {
          console.log("FizzBuzz");
       }
-      else if (i%5 == 0) {
+      else if (i % 5 == 0) {
          console.log("Buzz");
       }
-      else if (i%3 == 0) {
+      else if (i % 3 == 0) {
          console.log("Fizz");
       } else {
          console.log(i);
@@ -93,6 +93,12 @@ function fizzBuzz() { // TODO: put space around operators
 // greeting("Carolin", "German") -> "Hallo Carolin!"
 // Throw an exception if the language is not known
 function greeting(name, language) {
+   const dictionary = {
+      "English" : "Hello",
+      "French" : "Salut",
+      "German" : "Hallo"
+   }
+   return `${dictionary[language]} ${name}!`
 }
 
 // Return a random string of lowercase ASCII characters.
@@ -109,12 +115,15 @@ function randomLowerCaseString(length) { // Check
 // Given a Javascript binding, return whether or not it is a var binding.
 // isVarBinding("var x = 10;") -> true
 // isVarBinding("let x = 10;") -> false
-function isVarBinding(binding) { // TODO: write an else block to throw an exception, or just return binding.startsWith("var")
+function isVarBinding(binding) { 
    if (binding.startsWith("var")) {
-      return true
+      return true;
    }
    else if (binding.startsWith("let")) {
-      return false
+      return false;
+   }
+   else {
+      return new Error("something is wrong");
    }
 }
 
@@ -122,10 +131,10 @@ function isVarBinding(binding) { // TODO: write an else block to throw an except
 // fileExtension ("Readme.md") -> "md"
 // fileExtension ("index.js") -> "js"
 // fileExtension ("index") => ""
-function fileExtension(filename) { // TODO: Space around operators
+function fileExtension(filename) {
    let parts = filename.split(".");
    if ( parts[1] ) {
-      return parts[parts.length-1];
+      return parts[parts.length - 1];
    } else {
       return "";
    }
