@@ -90,31 +90,25 @@ function fizzBuzz() {
 // greeting("Carolin", "German") -> "Hallo Carolin!"
 // Throw an exception if the language is not known
 function greeting(name, language) {
-   let greeting = "";
-   if (language == "English") {
-      greeting = "Hello";
+   const greetings = {
+      "English" : "Hello",
+      "French" : "Salut",
+      "German" : "Hallo"
    }
-   else if (language == "French") {
-      greeting = "Salut";
-   }
-   else if (language == "German") {
-      greeting = "Hallo";
-   }
-   else {
-      throw("Error");
-   }
-   return `${greeting} ${name}!`;
+   return `${greetings[language]} ${name}!`;
 }
 
 // Return a random string of lowercase ASCII characters.
 // Notes: Take a look at the string method fromCodePoint()
 function randomLowerCaseString(length) {
+
 }
 
 // Given a Javascript binding, return whether or not it is a var binding.
 // isVarBinding("var x = 10;") -> true
 // isVarBinding("let x = 10;") -> false
 function isVarBinding(binding) {
+   return binding.includes("var") ? true : false;
 }
 
 // Return the file extension from a filename or the empty string
@@ -122,4 +116,5 @@ function isVarBinding(binding) {
 // fileExtension ("index.js") -> "js"
 // fileExtension ("index") => ""
 function fileExtension(filename) {
+   return filename.includes(".") ? filename.split(".")[1] : "";
 }

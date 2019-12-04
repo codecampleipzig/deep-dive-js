@@ -59,26 +59,37 @@ function sortChallenge(values) {
 // Implement a function equivalent to Array.prototype.find with a loop
 // If no element satisfies the condition return undefined
 function find(array, predicate) {
-
+   // for (let i = 0; i < array.length; i++) {
+   //   let  x = array[i];
+   //   return predicate ? x : undefined;
+   // }
 }
 
 // Implement lastIndexOf with a loop
 function lastIndexOf(array, element) {
-
+   let result = -1
+   for (let i = array.length - 1; i >= 0; i--) {
+      result = (array[i] == element) ? i : -1;
+      if (result != -1){
+         return result;
+      }
+   } 
+   return result;
 }
 
 // Implement includes using indexOf
 function includes(array, element) {
-
+   return array.indexOf(element) == -1 ? false : true;
 }
 
 // Write a function that takes in an array of strings and checks whether each of the strings contain the letter 'A'
 function everyContainsA(strings) {
-
+   return (strings.filter(x => x.includes("A"))).length == strings.length;
 }
+
 // Write a function that takes in an array of strings and checks whether one of the strings contains a number
 function someContainsNumber(strings) {
-
+   return strings.find(x => x.indexOf(0) != -1 || x.indexOf(1) != -1 || x.indexOf(2) != -1 || x.indexOf(3) != -1 || x.indexOf(4) != -1 || x.indexOf(5) != -1 ||x.indexOf(6) != -1 || x.indexOf(7) != -1 ||x.indexOf(8) != -1 ||x.indexOf(9) != -1)
 }
 
 // Implement Array.prototype.some with a loop

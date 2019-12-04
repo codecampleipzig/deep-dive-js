@@ -93,12 +93,12 @@ describe ("1 Foundations", () => {
       expect(s.split().every(c => /[a-z]/.test(c)));
    });
 
-   xtest("isVarBinding", () => {
+   test("isVarBinding", () => {
       expect(Challenges.isVarBinding("var x = 10;"));
       expect(!Challenges.isVarBinding("let x = 10;"));
    })
 
-   xtest("fileExtension", () => {
+   test("fileExtension", () => {
       expect(Challenges.fileExtension("Readme.md")).toBe("md");
       expect(Challenges.fileExtension("Readme.test")).toBe("test");
       expect(Challenges.fileExtension("Readme")).toBe("");
