@@ -52,7 +52,7 @@ function add(lhs, rhs) {
 }
 
 // Print all the numbers from 1 to 100 with two exceptions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead. For numbers that are divisible by both 5 and 3 print "FizzBuzz".
-function fizzBuzz() {
+function fizzBuzz() { // TODO: where's the FizzBuzz. In line 59 you can already assume that i % 3 != 0, because of line 57. Also use a for loop instead of while
    while (i <= 100){
       if(i % 3 === 0){
          console.log("Fizz");
@@ -67,7 +67,7 @@ function fizzBuzz() {
 // greeting("Bob", "French") -> "Salut Bob!"
 // greeting("Carolin", "German") -> "Hallo Carolin!"
 // Throw an exception if the language is not known
-function greeting(name, language) {
+function greeting(name, language) { // check, but maybe try to refactor to use an object to store a translation table
    if (language == "English"){
       return "Hello " + name;
    } else if (language == "French"){
