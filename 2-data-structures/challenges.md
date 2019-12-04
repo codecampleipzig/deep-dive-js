@@ -4,20 +4,24 @@
 
 ```
 array[i];
-// O(?)
+// O(1)
+// constant
 
 array.push(x)
-// O(?)
+// O(1)
+// constant
 
 array.shift(x)
-// O(?)
+// O(n)
+// linear
 
 array.map(x => 2 * x)
-// O(?)
+// O(n)
+// linear
 
 array.includes(x)
-// O(?)
+// O(n)
 
 array.sort()
-// O(?) (take a guess)
+// O(log(n)  *n) (take a guess)
 ```
