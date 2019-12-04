@@ -1,4 +1,4 @@
-# Quick Reference: Data Strucutres
+# Quick Reference: Data Structures
 
 ## Complexity
 
@@ -6,11 +6,23 @@ The complexity of an operation is an estimation of the number of steps needed fo
 Complexity is described in relation to the size of the input data set, denoted by the letter n.
 A common system for notating complexities, is called the big O notation:
 
+Example: Find a book in a bookshelf
+
 - Constant Time: O(1)
-- Logarithmic: O(log(n))
+   - Pick a random book.
+   - .push to an array with capacity left
 - Linear: O(n)
+   - Check the books one by one.
+   - .push as long as no capacity is initialized, or whenever the capacity needs to be doubled (expensive)- .shift
+- Logarithmic: O(log(n)) 
+   Check the sorted bookshelf. Check one in the middle, decide to go left or right, repeat.
+   If n = 128, second step only 64 books are left. So 7 steps needed to find your book.
 - Quadratic: O(n^2)
+   Naive sorting algorithm
 - Exponential: O(2^n)
+
+Complexity of sorting: O(log(n) * n)
+   Nothing is faster than that. Read More!
 
 ## Data Structures
 
