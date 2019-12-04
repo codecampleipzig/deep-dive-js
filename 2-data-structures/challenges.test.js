@@ -1,4 +1,4 @@
-const {spliceChallenge, highScore, sliceSpreadChallenge, entriesStartingWith} = require("./challenges")
+const {spliceChallenge, highScore, sliceSpreadChallenge, entriesStartingWith, sortChallenge} = require("./challenges")
 
 describe ("2 Data Structures", () => {
    test("spliceChallenge", () => {
@@ -20,7 +20,7 @@ describe ("2 Data Structures", () => {
       expect(sliceSpreadChallenge()).toEqual(["A", "B", "C", "D", "E", "F", "G"]);
    });
 
-   xtest('sortChallenge',() => {
+   test('sortChallenge', () => {
       expect(sortChallenge(['a', true, 0])).toEqual([true, 0, 'a']);
       expect(sortChallenge([true, 0, 'a', 0, 'a', true])).toEqual([true, true, 0, 0, 'a', 'a']);
    })

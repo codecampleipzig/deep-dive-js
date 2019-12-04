@@ -122,6 +122,7 @@ function randomLowerCaseString(length) {
 // isVarBinding("var x = 10;") -> true
 // isVarBinding("let x = 10;") -> false
 function isVarBinding(binding) {
+   return binding.includes("var")
 }
 
 // Return the file extension from a filename or the empty string
@@ -129,4 +130,10 @@ function isVarBinding(binding) {
 // fileExtension ("index.js") -> "js"
 // fileExtension ("index") => ""
 function fileExtension(filename) {
+   let dotIndex = filename.indexOf(".")
+   if (dotIndex != "-1"){
+   return filename.slice(dotIndex + 1)
+   } else {
+      return ""
+   }
 }

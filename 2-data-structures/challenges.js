@@ -3,7 +3,7 @@ function spliceChallenge() {
    const daysInWeek = ["Tuesday", "Fizz", "Buzz", "Wednesday", "_", "Friday"]  // don't touch this!
    // Add calls to splice here:
    daysInWeek.splice(0, 0, 'Monday');
-   daysInWeek.splice(2, 2,);
+   daysInWeek.splice(2, 2);
    daysInWeek.splice(3, 1, 'Thursday');
    daysInWeek.splice(5, 0, 'Saturday');
    daysInWeek.splice(6, 0, 'Sunday');
@@ -18,7 +18,7 @@ function highScore() {
 
 // From the glossary (alphabetically sorted list of strings), extract a subsection for a specific starting letter
 // e.g. entriesStartingWith(["Adagio", "Andante", "Breve", "Cadenza", "Chorale", "Dolce"], "C") -> ["Cadenza", "Chorale"]
-function entriesStartingWith(glossary, startingLetter) { 
+function entriesStartingWith(glossary, startingLetter) {
    return glossary.filter(letter => letter[0] == startingLetter)
 }
 
@@ -29,15 +29,33 @@ function sliceSpreadChallenge() {
    const y = ["E", "F", "G", "X"];
    const z = ["X", "C", "D", "E"];
 
-   return [...x.slice(1,4),...z.slice(2),...y.slice(1,3)]
+   return [...x.slice(1, 4), ...z.slice(2), ...y.slice(1, 3)]
 }
 
 // Sort an array of values, by type in this order: First booleans, than numbers, than strings.
 // Apart from that, the order is undefined
 // sortChallenge(['a', true, 3]) -> [true, 3, 'a']
 function sortChallenge(values) {
-
-
+   let result = [...values]
+   return result.sort((a, b) => a - b);
+   // var mapped = list.map((el, i) => {
+   //    return { index: i, value: el };
+   // });
+   // mapped.sort((a,b) => {
+   //    if (typeof a == true || false) {
+   //       return 1
+   //    } else if (typeof a == "number") {
+   //       return -1
+   //    } else if (typeof a == "string"){
+   //       return 0
+   //    } else {
+   //       return
+   //    }
+   // });
+   // var result = mapped.map((el) => {
+   //    return list[el.index];
+   // })
+   // return result
 }
 
 module.exports = {

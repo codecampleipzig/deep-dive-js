@@ -19,7 +19,7 @@
 
 // length is a property
 
-const cast = ['Gordi', 'Chris', 'Vern'];
+const cast = ['Gordian', 'Chris', 'Vern'];
 
 cast.length;
 
