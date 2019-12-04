@@ -34,8 +34,8 @@ Boolean(Infinity)
 5. What's the difference between == and === ?
 
    Answer
-   == compares the values regardless of their type
-   === compares the type first and evaluates to false if it
+   == compares the values after type convertion (to a string),
+   === compares the values without type convertion
 
 6. Fill in the blanks to make the statement true
 

@@ -20,15 +20,7 @@ function escapeChallenge() {
 // Add line numbers to the beginning of each line:
 // e.g. addLineNumbers("Hello\nWorld\n!") -> "1 Hello\n2 World\n3 !"
 function addLineNumbers(text) {
-   const lines = text.split("\n");
-   let output = "";
-   // TODO: take a look at Array.prototype.join
-   for(let i = 0; i < lines.length; i++) {
-      const line = i + 1;
-      output += `${line} ${lines[i]}`;
-      output += (line != lines.length) ? '\n' : '';
-   }
-   return output;
+   return text.split("\n").map((line, i) => `${i+1} ${line}`).join("\n");
 }
 
 // A bugfree version of typeof
