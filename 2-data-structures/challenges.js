@@ -1,20 +1,25 @@
 // Just using splice, manipulate daysInWeek, so it actually contains all the days in the week and in the right order
 function spliceChallenge() {
-   const daysInWeek = ["Tuesday", "Fizz", "Buzz", "Wednesday", "_", "Friday"]  // don't touch this!
+   let daysInWeek = ["Tuesday", "Fizz", "Buzz", "Wednesday", "_", "Friday"];  // don't touch this!
    // Add calls to splice here:
-
+   daysInWeek.splice(0, 0, "Monday");
+   daysInWeek.splice(2, 2);
+   daysInWeek.splice(3, 1, "Thursday");
+   daysInWeek.splice(4, 0, "Saturday", "Sunday");
    return daysInWeek;
 }
 
 // This code doesn't work, but with a tiny tweak it will.
 function highScore() {
    const scores = [62, 234, 163, 32, 41, 272];
-   return Math.max(scores);
+   return Math.max(...scores);
 }
+
 
 // From the glossary (alphabetically sorted list of strings), extract a subsection for a specific starting letter
 // e.g. entriesStartingWith(["Adagio", "Andante", "Breve", "Cadenza", "Chorale", "Dolce"], "C") -> ["Cadenza", "Chorale"]
 function entriesStartingWith(glossary, startingLetter) { 
+   return glossary.filter(word => word.startsWith(startingLetter))
 }
 
 // Without touching the array literals, and without adding any new string literals, return this array:
@@ -23,6 +28,7 @@ function sliceSpreadChallenge() {
    const x = ["X", "A", "B", "C", "X"];
    const y = ["E", "F", "G", "X"];
    const z = ["X", "C", "D", "E"];
+   return [...x.slice(1, 3), ...z.slice(1, 4), ...y.slice(1,3)]
 }
 
 // This is a hard one:
@@ -30,8 +36,21 @@ function sliceSpreadChallenge() {
 // Apart from that, the order is undefined
 // sortChallenge(['a', true, 3]) -> [true, 3, 'a']
 function sortChallenge(values) {
+   values.sort((a,b) => {
+      if (Boolean(a)) {
+         if (Boolean(b)) {
+            return 0
+         }
+         else {
+            return 1
+         }
+      }
 
+      //...to be continued
+   })
 }
+
+console.log(sortChallenge(['a', true, 3]));
 
 // Implement a function equivalent to Array.prototype.find with a loop
 // If no element satisfies the condition return undefined
