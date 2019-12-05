@@ -34,9 +34,14 @@ function sliceSpreadChallenge() {
 // sortChallenge(['a', true, 3]) -> [true, 3, 'a']
 function sortChallenge(values) {
    values.sort(a, b){
-      const aLowerCase = a.toLowerCase();
-      const bLowerCase = b.toLowerCase();
+      let sortedArray = [];
+      if (typeof a == boolean && typeof b == boolean) {
+         return ;
+      } else if (typeof a == number && typeof b == boolean) {
+         return ;
+      
    }
+   return sortedArray;
 }
 
 // Implement a function equivalent to Array.prototype.find with a loop
