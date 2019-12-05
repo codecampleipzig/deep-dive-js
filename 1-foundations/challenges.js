@@ -97,7 +97,11 @@ function greeting(name, language) {
       "French" : "Salut",
       "German" : "Hallo"
    }
-   return `${greetings[language]} ${name}!`;
+   const hello = greeting[language];
+   if(!hello) {
+      throw new Error("Language not known");
+   }
+   return `${hello} ${name}!`;
 }
 
 // Return a random string of lowercase ASCII characters.
