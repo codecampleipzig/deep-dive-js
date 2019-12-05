@@ -37,7 +37,7 @@ describe ("2 Data Structures", () => {
       expect(entriesStartingWith(testGlossary, "D")).toEqual(["D1", "D2"]);
    })
 
-   xtest('sortChallenge',() => {
+   test('sortChallenge',() => {
       expect(sortChallenge(['a', true, 0])).toEqual([true, 0, 'a']);
       expect(sortChallenge([true, 0, 'a', 0, 'a', true])).toEqual([true, true, 0, 0, 'a', 'a']);
    })

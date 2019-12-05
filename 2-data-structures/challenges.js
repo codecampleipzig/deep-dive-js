@@ -47,8 +47,23 @@ function sliceSpreadChallenge() {
 // Apart from that, the order is undefined
 // sortChallenge(['a', true, 3]) -> [true, 3, 'a']
 function sortChallenge(values) {
+   let booleans = [];
+   let numbers = [];
+   let strings = [];
+   let others = [];
+   for (i = 0; i < values.length; i++) {
+      if (typeof values[i] === 'boolean') {
+         booleans.push(values[i]);
+      } else if (typeof values[i] === 'number') {
+         numbers.push(values[i]);
+      } else if (typeof values[i] === 'string') {
+         strings.push(values[i]);
+      } else {others.push(values[i])};
+   };
+   return ([...booleans, ...numbers, ...strings, ...others]);
+};
 
-}
+
 
 // Implement a function equivalent to Array.prototype.find with a loop
 // If no element satisfies the condition return undefined
