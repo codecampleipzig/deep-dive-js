@@ -12,21 +12,24 @@ const {
    some,
    addEnding,
    removeNull,
-   flatten
+   flatten,
+   getEmail,
+   resetEmail,
+   allValuesAreTruthy
 } = require("./challenges")
 
 describe ("2 Data Structures", () => {
-   test("spliceChallenge", () => {
+   xtest("spliceChallenge", () => {
       expect(spliceChallenge()).toEqual(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"])
    });
-   test("highScore", () => {
+   xtest("highScore", () => {
       expect(highScore()).toBe(272);
    });
-   test("sliceSpreadChallenge", () => {
+   xtest("sliceSpreadChallenge", () => {
       expect(sliceSpreadChallenge()).toEqual(["A", "B", "C", "D", "E", "F", "G"]);
    });
 
-   test("entriesStartingWith",() => {
+   xtest("entriesStartingWith",() => {
       const testGlossary = ["A1", "A2", "A3", "B1", "B2", "D1", "D2"]
       expect(entriesStartingWith(testGlossary, "A")).toEqual(["A1", "A2", "A3"]);
       expect(entriesStartingWith(testGlossary, "B")).toEqual(["B1", "B2"]);
@@ -34,7 +37,7 @@ describe ("2 Data Structures", () => {
       expect(entriesStartingWith(testGlossary, "D")).toEqual(["D1", "D2"]);
    })
 
-   test('sortChallenge',() => {
+   xtest('sortChallenge',() => {
       expect(sortChallenge(['a', true, 0])).toEqual([true, 0, 'a']);
       expect(sortChallenge([true, 0, 'a', 0, 'a', true])).toEqual([true, true, 0, 0, 'a', 'a']);
    })
@@ -44,24 +47,24 @@ describe ("2 Data Structures", () => {
       expect(find([1, 2, 3], x => null)).toBe(undefined);
       expect(find([1, 2, 3], x => x > 2)).toBe(3);
    })
-   test('lastIndexOf', () => {
+   xtest('lastIndexOf', () => {
       expect(lastIndexOf([3, 3, 3], 3)).toBe(2);
       expect(lastIndexOf([3, 3, 3, 1, 1], 3)).toBe(2);
       expect(lastIndexOf([3, 3, 3, 1, 1], 2)).toBe(-1);
    })
-   test('includes', () => {
+   xtest('includes', () => {
       expect(includes([1, 2, 3, 4, 5], 4)).toBeTruthy();
       expect(includes([1, 2, 3, 4, 5], 6)).toBeFalsy();
       expect(includes([1, 2, 3, 4, 5], 3)).toBeTruthy();
    })
-   test('everyContainsA', () => {
+   xtest('everyContainsA', () => {
       expect(everyContainsA([])).toBeTruthy();
       expect(everyContainsA(["BA"])).toBeTruthy();
       expect(everyContainsA(["A", "BA", "CDA"])).toBeTruthy();
       expect(everyContainsA(["A", "B", "CDA", ""])).toBeFalsy();
    })
 
-   test('someContainsNumber', () => {
+   xtest('someContainsNumber', () => {
       expect(someContainsNumber([])).toBeFalsy();
       expect(someContainsNumber(["AAA", "AAA", "A0A"])).toBeTruthy();
       expect(someContainsNumber(["AAA", "A1AA", "AA"])).toBeTruthy();
@@ -76,14 +79,14 @@ describe ("2 Data Structures", () => {
       expect(some(['A', 'B', 'C'], v => false)).toBeFalsy();
    })
 
-   test('addEnding', () => {
+   xtest('addEnding', () => {
       expect(addEnding(["clever", "meek", "hurried", "nice"], "ly"))
       .toEqual(["cleverly", "meekly", "hurriedly", "nicely"]);
       expect(addEnding(["new", "pander", "scoop"], "er"))
       .toEqual(["newer", "panderer", "scooper"])
    });
 
-   test('removeNull', () => {
+   xtest('removeNull', () => {
       expect(removeNull([])).toEqual([]);
       expect(removeNull(['A', 'B', 'C'])).toEqual(['A', 'B', 'C']);
       expect(removeNull([null, 'A', null, 'B', null, 'C', null])).toEqual(['A', 'B', 'C']);
@@ -95,4 +98,23 @@ describe ("2 Data Structures", () => {
       expect(flatten([[1, 2], [3, 4], [5]])).toEqual([1, 2, 3, 4, 5]);
       expect(flatten([[1, 2], [], [3, 4], [5]])).toEqual([1, 2, 3, 4, 5]);
    })
+
+   xtest('getEmail', () => {
+      expect(getEmail({email: "info@me.com"})).toBe("info@me.com");
+   })
+   xtest('resetEmail', () => {
+      expect(resetEmail({email: "oldEmail"}, "newEmail")).toEqual({email: "newEmail"});
+      expect(resetEmail({email: "oldEmail", name: "user"}, "newEmail")).toEqual({email: "newEmail", name: "user"});
+   })
+
+   xtest('allValuesAreTruthy', () => {
+      expect(allValuesAreTruthy({a: 1, b: 2})).toBe(true);
+      expect(allValuesAreTruthy({a: 1, b: 0})).toBe(false);
+      expect(allValuesAreTruthy({a: 1, b: false})).toBe(false);
+      expect(allValuesAreTruthy({a: 1, b: null})).toBe(false);
+      expect(allValuesAreTruthy({a: 1, b: ""})).toBe(false);
+      expect(allValuesAreTruthy({a: 1, b: NaN})).toBe(false);
+      expect(allValuesAreTruthy({})).toBe(true);
+   })
+
 });
