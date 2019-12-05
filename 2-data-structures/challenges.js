@@ -2,19 +2,31 @@
 function spliceChallenge() {
    const daysInWeek = ["Tuesday", "Fizz", "Buzz", "Wednesday", "_", "Friday"]  // don't touch this!
    // Add calls to splice here:
-
+   daysInWeek.splice(0, 0, "Monday");
+   daysInWeek.splice(2, 2);
+   daysInWeek.splice(3, 1, "Thursday");
+   daysInWeek.splice(5, 0, "Saturday", "Sunday");
    return daysInWeek;
 }
 
 // This code doesn't work, but with a tiny tweak it will.
 function highScore() {
    const scores = [62, 234, 163, 32, 41, 272];
-   return Math.max(scores);
+   return Math.max(...scores); 
 }
 
 // From the glossary (alphabetically sorted list of strings), extract a subsection for a specific starting letter
 // e.g. entriesStartingWith(["Adagio", "Andante", "Breve", "Cadenza", "Chorale", "Dolce"], "C") -> ["Cadenza", "Chorale"]
-function entriesStartingWith(glossary, startingLetter) { 
+
+function entriesStartingWith(glossary, startingLetter) {
+   let result = [];
+   for (i = 0; i < glossary.length; i++) {
+      let word = glossary[i];
+      if (word[0].match(startingLetter)) {
+      result.push(word);
+      };
+   } 
+   return result;
 }
 
 // Without touching the array literals, and without adding any new string literals, return this array:
@@ -23,6 +35,11 @@ function sliceSpreadChallenge() {
    const x = ["X", "A", "B", "C", "X"];
    const y = ["E", "F", "G", "X"];
    const z = ["X", "C", "D", "E"];
+   
+   let a = x.slice(1, 4);
+   let b = z.slice(2, 4);
+   let c = y.slice(1, 3);
+   return ([...a, ...b, ...c]);
 }
 
 // This is a hard one:
