@@ -12,20 +12,21 @@ array.push('C');
 let C = array.pop();
 let B = array.pop();
 let A = array.pop();
+array; // -> []
 
 // **********************************
-// # shift & unshift
+// # unshift & shift
 // **********************************
 
-// shift adds elements to the beginning of an array
-array.shift('C');
-array.shift('B');
-array.shift('A');
+// unshift adds elements to the beginning of an array
+array.unshift('C');
+array.unshift('B');
+array.unshift('A');
 
-// unshift removes and returns the first element of the array
-A = array.unshift();
-B = array.unshift();
-C = array.unshift();
+// shift removes and returns the first element of the array
+A = array.shift();
+B = array.shift();
+C = array.shift();
 
 // **********************************
 // # splice
@@ -42,16 +43,23 @@ const months = ['Jan', 'March', 'April', 'May'];
 
 // Insertion
 months.splice(1, 0, 'February')
+// ['Jan', 'February, 'March', 'April', 'May'];
+
+months.splice(0, 1, "December"); // ["Jan"]
 
 // Replacement
-const [Jan] = months.splice(0, 1, 'January')
+const [Jan] = months.splice(0, 1, 'January') // ["Jan"]
 // Splice returns the removed elements as an Array
+Jan; // "Jan"
 
+// ['January', 'February, 'March', 'April', 'May'];
 // Adding elements to the end
 months.splice(5, 0, 'June', 'July', 'August');
+months;
 
 // Removing Elements ()
 const [January, February, March] = months.splice(0, 3);
+months;
 
 // **********************************
 // # sorting
