@@ -97,7 +97,7 @@ function greeting(name, language) {
       "French" : "Salut",
       "German" : "Hallo"
    }
-   const hello = greeting[language];
+   const hello = greetings[language];
    if(!hello) {
       throw new Error("Language not known");
    }

@@ -5,8 +5,7 @@ function spliceChallenge() {
    daysInWeek.splice(0, 0, 'Monday');
    daysInWeek.splice(2, 2);
    daysInWeek.splice(3, 1, 'Thursday');
-   daysInWeek.splice(5, 0, 'Saturday');
-   daysInWeek.splice(6, 0, 'Sunday');
+   daysInWeek.splice(5, 0, 'Saturday', 'Sunday');
 
    return daysInWeek;
 }
@@ -80,11 +79,13 @@ function includes(array, element) {
 
 // Write a function that takes in an array of strings and checks whether each of the strings contain the letter 'A'
 function everyContainsA(strings) {
-   return (strings.filter(x => x.includes("A"))).length == strings.length;
+   return (strings.every(x => x.includes("A")));
 }
 
 // Write a function that takes in an array of strings and checks whether one of the strings contains a number
 function someContainsNumber(strings) {
+   // const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+   // return strings.some(x => x.indexOf (...numbers) != -1)
    return strings.some(x => x.indexOf(0) != -1 || x.indexOf(1) != -1 || x.indexOf(2) != -1 || x.indexOf(3) != -1 || x.indexOf(4) != -1 || x.indexOf(5) != -1 ||x.indexOf(6) != -1 || x.indexOf(7) != -1 ||x.indexOf(8) != -1 ||x.indexOf(9) != -1)
 }
 
