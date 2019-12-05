@@ -39,7 +39,7 @@ function jstypeof(value) {
      return "object";
     } else {
      return typeof value;
-}
+}}
 
 // Return a random number in the range min (inclusive) to max (exclusive)
 function randomNumber(min, max) { // Check
@@ -74,11 +74,12 @@ function add(lhs, rhs) {
         if (i % 5 == 0) {
           console.log('FizzBuzz'); // this all the ones which are divisible by 5 && 3 - but why can't you wrtie if i % 3 && i % 5 ???
         } 
-        if (i % 3 == 0) {
-          console.log ('fizz'); // this all the ones who are divisible by 3, including 3
+        else {
+          console.log ('Fizz'); // what does this line mean?
         } 
+      }
         else if (i % 5 == 0) {
-          console.log('buzz'); // this all the ones who are divisible by 5, including 5
+          console.log('Buzz'); // this all the ones who are divisible by 5, including 5
         } else {
           console.log (i); // this condition prints all numbers
         }
@@ -99,11 +100,12 @@ function greeting(name, language) {
   };
   const hello = table[language];
   if (!hello) {
-    throw new Error('sorry, your language is not yet available'); // can you attach a message to the error?
-  } else {
-    return `${hello} + ${name}!`; // why cant you write hello in here
+    throw new Error();
   }
-  
+    else { // can you attach a message to the error?
+    return `${hello} ${name}!`; // why cant you write hello in here
+  }
+}
   
 //   if (name == "Anne" && language == "English") {
 //     return "Hello Anne!";
@@ -138,9 +140,7 @@ function fileExtension(filename) { // TODO: lastIndexOf returns a number not a s
     return "";
   } else {
     if (index == -1) { 
-      return ""}
+      return "";}
       else {
         return filename.substring(index + 1);
-  }
-  }
-}
+  }}}
