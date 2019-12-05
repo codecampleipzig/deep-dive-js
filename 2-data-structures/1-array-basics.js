@@ -89,22 +89,6 @@ first;
 second;
 rest;
 
-// Extremely useful with key value pairs
-
-const dependencies = {
-   "husky": "^3.1.0",
-   "jest": "^24.9.0",
-   "lint-staged": "^9.4.3",
-   "prettier": "^1.19.1",
-   "tslint": "~5.15.0",
-   "typescript": "~3.5.3"
-};
-
-const [package0, version0] = dependencies.entries()[0];
-const [package1, version1] = dependencies.entries()[1];
-const [package2, version2] = dependencies.entries()[2];
-//...
-
 // Can also be used to destructure function arguments
 function contains([first, ...rest], element) {
    if (first === undefined) {

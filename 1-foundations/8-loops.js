@@ -21,6 +21,17 @@ do {
 
 console.log (yourName);
 
+// as while loop
+
+let yourName;
+
+yourName = prompt("Who are you?");
+do {
+   yourName = prompt("Who are you?");
+} while (!yourName)
+console.log (yourName);
+
+
 // for loops are syntactic sugar
 for (let number = 0; number <= 12; number += 2) {
    console.log (number);
