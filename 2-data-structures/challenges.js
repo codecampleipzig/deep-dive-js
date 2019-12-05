@@ -17,8 +17,28 @@ function highScore() {
 
 // From the glossary (alphabetically sorted list of strings), extract a subsection for a specific starting letter
 // e.g. entriesStartingWith(["Adagio", "Andante", "Breve", "Cadenza", "Chorale", "Dolce"], "C") -> ["Cadenza", "Chorale"]
-function entriesStartingWith(glossary, startingLetter) { 
-   return glossary.filter(s => s.startsWith(startingLetter));
+function entriesStartingWith(glossary, startingLetter) {
+   // Simple implementation:
+   // return glossary.filter(s => s.startsWith(startingLetter));
+
+   // Complex optimized implementation;
+   let index = 0;
+
+   // Find first entry starting with startingLetter
+   while(index < glossary.length && !glossary[index].startsWith(startingLetter)) {
+      index += 1;
+   }
+   // Now glossary[index].startsWith(startingLetter)) or index == glossary.length
+
+   // Find first entry after that which doesn't start with startingLetter
+   let endIndex = index;
+   while (endIndex < glossary.length && glossary[endIndex].startsWith(startingLetter)) {
+      endIndex += 1;
+   }
+
+   // Now !glossary[endIndex].startsWith(startingLetter)) or endIndex == glossary.length
+
+   return glossary.slice(index, endIndex);
 }
 
 // Without touching the array literals, and without adding any new string literals, return this array:
