@@ -9,7 +9,7 @@
          "type": "node",
          "request": "launch",
          "program": "${workspaceRoot}/node_modules/.bin/jest",
-         "args": ["test","--runInBand","-i"],
+         "args": ["--runInBand","-i"],
          "cwd": "${workspaceFolder}"
      }
    ]
