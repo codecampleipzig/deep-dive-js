@@ -54,14 +54,14 @@ describe ("2 Data Structures", () => {
       expect(includes([1, 2, 3, 4, 5], 6)).toBeFalsy();
       expect(includes([1, 2, 3, 4, 5], 3)).toBeTruthy();
    })
-   test('everyContainsA', () => {
-      expect(everyContainsA([])).toBeTruthy();
+   xtest('everyContainsA', () => {
+      expect(everyContainsA([])).toBeFalsy();
       expect(everyContainsA(["BA"])).toBeTruthy();
       expect(everyContainsA(["A", "BA", "CDA"])).toBeTruthy();
       expect(everyContainsA(["A", "BA", "CDA", ""])).toBeFalsy();
    })
 
-   test('someContainsNumber', () => {
+   xtest('someContainsNumber', () => {
       expect(someContainsNumber([])).toBeFalsy();
       expect(someContainsNumber(["AAA", "AAA", "A0A"])).toBeTruthy();
       expect(someContainsNumber(["AAA", "A1AA", "AA"])).toBeTruthy();
@@ -71,26 +71,26 @@ describe ("2 Data Structures", () => {
       expect(someContainsNumber(["AAA", "AAA", "AA"])).toBeFalsy();
    })
 
-   test('some', () => {
+   xtest('some', () => {
       expect(some(['A', 'B', 'C'], v => v === 'C')).toBeTruthy();
       expect(some(['A', 'B', 'C'], v => false)).toBeFalsy();
    })
 
-   test('addEnding', () => {
+   xtest('addEnding', () => {
       expect(addEnding(["clever", "meek", "hurried", "nice"], "ly"))
       .toEqual(["cleverly", "meekly", "hurriedly", "nicely"]);
       expect(addEnding(["new", "pander", "scoop"], "er"))
       .toEqual(["newer", "panderer", "scooper"])
    });
 
-   test('removeNull', () => {
+   xtest('removeNull', () => {
       expect(removeNull([])).toEqual([]);
       expect(removeNull(['A', 'B', 'C'])).toEqual(['A', 'B', 'C']);
       expect(removeNull([null, 'A', null, 'B', null, 'C', null])).toEqual(['A', 'B', 'C']);
       expect(removeNull([null, null, false, "", 0])).toEqual([false, "", 0]);
    })
 
-   test('flatten', () => {
+   xtest('flatten', () => {
       expect(flatten([])).toEqual([]);
       expect(flatten([[1, 2], [3, 4], [5]])).toEqual([1, 2, 3, 4, 5]);
       expect(flatten([[1, 2], [], [3, 4], [5]])).toEqual([1, 2, 3, 4, 5]);

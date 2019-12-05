@@ -36,91 +36,96 @@ function sliceSpreadChallenge() {
 // Apart from that, the order is undefined
 // sortChallenge(['a', true, 3]) -> [true, 3, 'a']
 function sortChallenge(values) {
-   let result = [...values]
-   return result.sort((a, b) => a - b);
-   // var mapped = list.map((el, i) => {
-   //    return { index: i, value: el };
-   // });
-   // mapped.sort((a,b) => {
-   //    if (typeof a == true || false) {
-   //       return 1
-   //    } else if (typeof a == "number") {
-   //       return -1
-   //    } else if (typeof a == "string"){
-   //       return 0
-   //    } else {
-   //       return
-   //    }
-   // });
-   // var result = mapped.map((el) => {
-   //    return list[el.index];
-   // })
-   // return result
+   return values.sort((a, b) => {
+      const typeOfA = typeof a;
+      const typeOfB = typeof b;
+
+      if (typeOfA == typeOfB) {
+         return 0
+      }
+      if (typeOfA == "boolean") {
+         return -1;
+      }
+      if (typeOfA == "string") {
+         return 1;
+      }
+      if (typeOfA == "number") {
+         if (typeOfB == "boolean") {
+            return 1;
+         }
+         if (typeOfB == "string") {
+            return -1;
+         }
+      }
+   })
 }
 
 // Implement a function equivalent to Array.prototype.find with a loop
 // If no element satisfies the condition return undefined
 function find(array, predicate) {
-
+   for (let i = 0; i < array.length; i++) {
+      if (predicate(array[i])) {
+         return array[i]
+      }
+   }
+   return undefined
 }
 
 // Implement lastIndexOf with a loop
 function lastIndexOf(array, element) {
-
+   for (let i = array.length - 1; i >= 0; i--) {
+      if (array[i] == element) {
+         return i
+      }
+   }
+   return -1
 }
 
 // Implement includes using indexOf
 function includes(array, element) {
-
+   return array.indexOf(element) != -1
 }
 
 // Write a function that takes in an array of strings and checks whether each of the strings contain the letter 'A'
 function everyContainsA(strings) {
 
 }
+
 // Write a function that takes in an array of strings and checks whether one of the strings contains a number
-function someContainsNumber(strings) {
+ function someContainsNumber(strings) {
+ }
 
-}
-
-// Implement Array.prototype.some with a loop
-function some(array, condition) {
-
-}
-
-// Create a function that adds a string ending to each member in an array.
-// e.g. addEnding(["clever", "meek", "hurried", "nice"], "ly")
-// -> ["cleverly", "meekly", "hurriedly", "nicely"]
-function addEnding(array, ending) {
-
-}
-
-// Create a function to remove all null values from an array.
-// e.g. removeNull(["a", null, "b", null]) -> ["a", "b"]
-function removeNull(array) {
-
-}
-
-// Using reduce in combination with the concat method, write a function to flatten an array of arrays into a single array, that has all the elements of the original orrays
-// e.g. flatten([['a', 'b'], ['c', 'd'], ['e']])
-// -> ['a', 'b', 'c', 'd', 'e']
-function flatten(array) {
-
-}
-
-module.exports = {
-   spliceChallenge,
-   sliceSpreadChallenge,
-   highScore,
-   sortChallenge,
-   entriesStartingWith,
-   find,
-   lastIndexOf,
-   includes,
-   everyContainsA,
-   someContainsNumber,
-   some,
-   addEnding,
-   removeNull,
-   flatten
-};
+ // Implement Array.prototype.some with a loop
+ function some(array, condition) {
+ }
+ 
+ // Create a function that adds a string ending to each member in an array.
+ // e.g. addEnding(["clever", "meek", "hurried", "nice"], "ly")
+ // -> ["cleverly", "meekly", "hurriedly", "nicely"]
+ function addEnding(array, ending) {
+ }
+ // Create a function to remove all null values from an array.
+ // e.g. removeNull(["a", null, "b", null]) -> ["a", "b"]
+ function removeNull(array) {
+ }
+ // Using reduce in combination with the concat method, write a function to flatten an array of arrays into a single array, that has all the elements of the original orrays
+ // e.g. flatten([['a', 'b'], ['c', 'd'], ['e']])
+ // -> ['a', 'b', 'c', 'd', 'e']
+ function flatten(array) {
+ }
+ module.exports = {
+    spliceChallenge,
+    sliceSpreadChallenge,
+    highScore,
+    sortChallenge,
+    entriesStartingWith,
+    find,
+    lastIndexOf,
+    includes,
+    everyContainsA,
+    someContainsNumber,
+    some,
+    addEnding,
+    removeNull,
+    flatten
+ };
