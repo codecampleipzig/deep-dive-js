@@ -68,14 +68,14 @@ function add(lhs, rhs) { // check
 // Print all the numbers from 1 to 100 with two exceptions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead. For numbers that are divisible by both 5 and 3 print "FizzBuzz".
 function fizzBuzz() { // check, maybe add some more spaces around your operators, i % 3 instead of i%3
    for (let i = 1; i <= 100; i++) {
-      if (i%3 == 0) {
-         "Fizz";
-      }else if(i%5 == 0) {
-         "Buzz";
-      }else if (i%3 == 0 && i%5 == 0) {
-         "FizzBuzz";
+      if (i % 3 == 0) {
+         console.log("Fizz");
+      }else if(i % 5 == 0) {
+         console.log("Buzz");
+      }else if(i % 3 == 0 && i % 5 == 0) {
+         console.log("FizzBuzz");
       }else{
-         return i;
+         console.log(i);
       }
    }
 }

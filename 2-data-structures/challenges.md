@@ -19,5 +19,5 @@ array.includes(x)
 // O(n)
 
 array.sort()
-// O(log(n) * n) (take a guess)
+// O(nlog(n)) (take a guess)
 ```
