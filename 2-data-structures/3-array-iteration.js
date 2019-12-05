@@ -12,7 +12,7 @@ for (let i = 0; i < array.length; ++i) {
 }
 
 // New style: for of
-for (element of array) {
+for (const element of array) {
    // do something with element, e.g.
    console.log (element);
 }
