@@ -14,14 +14,14 @@ describe ("1 Foundations", () => {
       expect(s.length).toBe(8);
    });
 
-   xtest("addLineNumbers", () => {
+   test("addLineNumbers", () => {
       expect(Challenges.addLineNumbers("Hello\nWorld\n!")).toBe("1 Hello\n2 World\n3 !");
       expect(Challenges.addLineNumbers("")).toBe("1 ");
       expect(Challenges.addLineNumbers("A")).toBe("1 A");
       expect(Challenges.addLineNumbers(".\n.\n.")).toBe("1 .\n2 .\n3 .");
    })
 
-   xtest("jstypeof", () => {
+   test("jstypeof", () => {
       expect(Challenges.jstypeof("")).toBe("string");
       expect(Challenges.jstypeof(null)).toBe("null");
       expect(Challenges.jstypeof(() => {})).toBe("object");
@@ -78,7 +78,7 @@ describe ("1 Foundations", () => {
       console.log = consoleLog;
    });
 
-   xtest("greeting", () => {
+   test("greeting", () => {
       expect(Challenges.greeting("Anne", "English")).toBe("Hello Anne!");
       expect(Challenges.greeting("Bob", "French")).toBe("Salut Bob!");
       expect(Challenges.greeting("Carolin", "German")).toBe("Hallo Carolin!");
@@ -93,12 +93,12 @@ describe ("1 Foundations", () => {
       expect(s.split().every(c => /[a-z]/.test(c)));
    });
 
-   xtest("isVarBinding", () => {
+   test("isVarBinding", () => {
       expect(Challenges.isVarBinding("var x = 10;"));
       expect(!Challenges.isVarBinding("let x = 10;"));
    })
 
-   xtest("fileExtension", () => {
+   test("fileExtension", () => {
       expect(Challenges.fileExtension("Readme.md")).toBe("md");
       expect(Challenges.fileExtension("Readme.test")).toBe("test");
       expect(Challenges.fileExtension("Readme")).toBe("");
