@@ -12,20 +12,21 @@ array.push('C');
 let C = array.pop();
 let B = array.pop();
 let A = array.pop();
+array; // -> []
 
 // **********************************
-// # shift & unshift
+// # unshift & shift
 // **********************************
 
-// shift adds elements to the beginning of an array
-array.shift('C');
-array.shift('B');
-array.shift('A');
+// unshift adds elements to the beginning of an array
+array.unshift('C');
+array.unshift('B');
+array.unshift('A');
 
-// unshift removes and returns the first element of the array
-A = array.unshift();
-B = array.unshift();
-C = array.unshift();
+// shift removes and returns the first element of the array
+A = array.shift();
+B = array.shift();
+C = array.shift();
 
 // **********************************
 // # splice
@@ -42,16 +43,23 @@ const months = ['Jan', 'March', 'April', 'May'];
 
 // Insertion
 months.splice(1, 0, 'February')
+// ['Jan', 'February, 'March', 'April', 'May'];
+
+months.splice(0, 1, "December"); // ["Jan"]
 
 // Replacement
-const [Jan] = months.splice(0, 1, 'January')
+const [Jan] = months.splice(0, 1, 'January') // ["Jan"]
 // Splice returns the removed elements as an Array
+Jan; // "Jan"
 
+// ['January', 'February, 'March', 'April', 'May'];
 // Adding elements to the end
 months.splice(5, 0, 'June', 'July', 'August');
+months;
 
 // Removing Elements ()
 const [January, February, March] = months.splice(0, 3);
+months;
 
 // **********************************
 // # sorting
@@ -59,9 +67,9 @@ const [January, February, March] = months.splice(0, 3);
 
 // Sorting data is an extremely important operation, but you should not implement sort yourself
 
-const numbers = [4, 6, 3, 1, 5, 2];
+const letters = ['b', 'c', 'a', 'd', 'e'];
 
-numbers.sort();
+letters.sort();
 
 // You can give the sort method a custom comparator
 
@@ -79,3 +87,13 @@ strings.sort((a, b) => {
    // a and b are equal
    return 0;
 })
+
+// Be aware, that by default sort will compare the string representation of the values
+const numbers = [34, 123, 9]
+numbers.sort()
+numnbers; // [123, 9, 34]
+
+// To sort them as numbers:
+numbers.sort((a, b) => a - b);
+numbers; // [9, 34, 123]
+
