@@ -141,7 +141,10 @@ function getEmail(user) {
 
 // Use destructuring and the spread syntax: return the user object, but with the email swapped out for newEmail
 function resetEmail(user, newEmail) {
-   return {}
+   return {
+      ...user,
+      email : "newEmail",
+   }
 }
 
 // Object iteration: check that all keys in the object are truthy
@@ -149,7 +152,9 @@ function resetEmail(user, newEmail) {
 // allValuesAreTruthy({a: 1, b: 0}) -> false
 // allValuesAreTruthy({a: 1, b: ""}) -> false
 function allValuesAreTruthy(object) {
+   return (Object.values(object)).every(value => Boolean(value));
 }
+allValuesAreTruthy({a: 1, b: 2})
 
 module.exports = {
    spliceChallenge,
