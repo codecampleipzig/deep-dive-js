@@ -64,7 +64,7 @@ describe ("2 Data Structures", () => {
       expect(everyContainsA(["A", "BA", "CDA", ""])).toBeFalsy();
    })
 
-   xtest('someContainsNumber', () => {
+   test('someContainsNumber', () => {
       expect(someContainsNumber([])).toBeFalsy();
       expect(someContainsNumber(["AAA", "AAA", "A0A"])).toBeTruthy();
       expect(someContainsNumber(["AAA", "A1AA", "AA"])).toBeTruthy();
@@ -86,28 +86,28 @@ describe ("2 Data Structures", () => {
       .toEqual(["newer", "panderer", "scooper"])
    });
 
-   xtest('removeNull', () => {
+   test('removeNull', () => {
       expect(removeNull([])).toEqual([]);
       expect(removeNull(['A', 'B', 'C'])).toEqual(['A', 'B', 'C']);
       expect(removeNull([null, 'A', null, 'B', null, 'C', null])).toEqual(['A', 'B', 'C']);
       expect(removeNull([null, null, false, "", 0])).toEqual([false, "", 0]);
    })
 
-   xtest('flatten', () => {
+   test('flatten', () => {
       expect(flatten([])).toEqual([]);
       expect(flatten([[1, 2], [3, 4], [5]])).toEqual([1, 2, 3, 4, 5]);
       expect(flatten([[1, 2], [], [3, 4], [5]])).toEqual([1, 2, 3, 4, 5]);
    })
 
-   xtest('getEmail', () => {
+   test('getEmail', () => {
       expect(getEmail({email: "info@me.com"})).toBe("info@me.com");
    })
-   xtest('resetEmail', () => {
+   test('resetEmail', () => {
       expect(resetEmail({email: "oldEmail"}, "newEmail")).toEqual({email: "newEmail"});
       expect(resetEmail({email: "oldEmail", name: "user"}, "newEmail")).toEqual({email: "newEmail", name: "user"});
    })
 
-   xtest('allValuesAreTruthy', () => {
+   test('allValuesAreTruthy', () => {
       expect(allValuesAreTruthy({a: 1, b: 2})).toBe(true);
       expect(allValuesAreTruthy({a: 1, b: 0})).toBe(false);
       expect(allValuesAreTruthy({a: 1, b: false})).toBe(false);

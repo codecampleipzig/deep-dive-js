@@ -65,7 +65,7 @@ function sortChallenge(values) {
 // If no element satisfies the condition return undefined
 function find(array, predicate) {
    for (const element of array) {
-      if (predicate (element)){
+      if (predicate(element)) {
          return element
       }
    }
@@ -89,19 +89,19 @@ function includes(array, element) {
 
 // Write a function that takes in an array of strings and checks whether each of the strings contain the letter 'A'
 function everyContainsA(strings) {
-     return strings.every(word => word.includes("A"))
+   return strings.every(word => word.includes("A"))
 }
 
 // A bit hard, except if you use a regex.
 // Write a function that takes in an array of strings and checks whether one of the strings contains a number
 function someContainsNumber(strings) {
-
+   return strings.find(number => number.includes("0") || number.includes("1") || number.includes("2") || number.includes("3") || number.includes("4") || number.includes("5") || number.includes("6") || number.includes("7") || number.includes("8") || number.includes("9"))
 }
 
 // Implement Array.prototype.some with a loop
 function some(array, condition) {
-   for (const element of array){
-      if (condition(element)){
+   for (const element of array) {
+      if (condition(element)) {
          return true
       }
    }
@@ -112,38 +112,57 @@ function some(array, condition) {
 // e.g. addEnding(["clever", "meek", "hurried", "nice"], "ly")
 // -> ["cleverly", "meekly", "hurriedly", "nicely"]
 function addEnding(array, ending) {
-  return array.map(element => (element + ending))
+   return array.map(element => (element + ending))
 }
 
 // Create a function to remove all null values from an array.
 // e.g. removeNull(["a", null, "b", null]) -> ["a", "b"]
-function removeNull(array) {
 
+function removeNull(array) {
+   const result = [];
+   return array.filter(element => {
+      if (element !== null) {
+         return result.push(element)
+      }
+   })
 }
+
 
 // Using reduce in combination with the concat method, write a function to flatten an array of arrays into a single array, that has all the elements of the original orrays
 // e.g. flatten([['a', 'b'], ['c', 'd'], ['e']])
 // -> ['a', 'b', 'c', 'd', 'e']
 function flatten(array) {
-
+   if (array.length != 0) {
+      return array.reduce((result, element) => result.concat(element))
+   } else {
+      return array
+   }
 }
+
 
 // Add destructuring to the parameter list to make this function return user.email
 function getEmail(user) {
+   const {email} = user;
    return email;
 }
 
 // Use destructuring and the spread syntax: return the user object, but with the email swapped out for newEmail
 function resetEmail(user, newEmail) {
-   return {}
+   return {...user,
+      email: newEmail
+   }
 }
 
 // Object iteration: check that all keys in the object are truthy
 // allValuesAreTruthy({a: 1, b: 2}) -> true
 // allValuesAreTruthy({a: 1, b: 0}) -> false
 // allValuesAreTruthy({a: 1, b: ""}) -> false
+
 function allValuesAreTruthy(object) {
+   const objectValues = Object.values(object)
+   return objectValues.every(value => Boolean(value)) 
 }
+
 
 module.exports = {
    spliceChallenge,
