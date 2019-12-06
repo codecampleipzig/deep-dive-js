@@ -130,7 +130,7 @@ function removeNull(array) {
 // e.g. flatten([['a', 'b'], ['c', 'd'], ['e']])
 // -> ['a', 'b', 'c', 'd', 'e']
 function flatten(array) {
-   return (Array.isArray(array) && array.length != 0) ? (array.reduce((result, element) => result.concat(element))) : [];
+   return array.reduce((result, element) => result.concat(element),[]);
 }
 
 // Add destructuring to the parameter list to make this function return user.email
@@ -154,7 +154,6 @@ function resetEmail(user, newEmail) {
 function allValuesAreTruthy(object) {
    return (Object.values(object)).every(value => Boolean(value));
 }
-allValuesAreTruthy({a: 1, b: 2})
 
 module.exports = {
    spliceChallenge,
