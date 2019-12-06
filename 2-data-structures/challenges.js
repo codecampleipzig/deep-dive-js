@@ -50,22 +50,30 @@ function sortChallenge(values) {
    })
 }
 
-console.log(sortChallenge(['a', true, 3]));
-
 // Implement a function equivalent to Array.prototype.find with a loop
 // If no element satisfies the condition return undefined
 function find(array, predicate) {
-
+   for (let el of array) {
+      if (predicate(el)) {
+         return el
+      }
+   }
+   return undefined
 }
 
 // Implement lastIndexOf with a loop
 function lastIndexOf(array, element) {
-
+   for (let i = array.length; i >= 0; i--) {
+      if ( array[i] == element) {
+         return i;
+      }
+   }
+   return -1;
 }
 
 // Implement includes using indexOf
 function includes(array, element) {
-
+   
 }
 
 // Write a function that takes in an array of strings and checks whether each of the strings contain the letter 'A'

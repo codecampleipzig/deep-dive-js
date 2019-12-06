@@ -19,13 +19,13 @@ const {
 } = require("./challenges")
 
 describe ("2 Data Structures", () => {
-   xtest("spliceChallenge", () => {
+   test("spliceChallenge", () => {
       expect(spliceChallenge()).toEqual(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"])
    });
-   xtest("highScore", () => {
+   test("highScore", () => {
       expect(highScore()).toBe(272);
    });
-   xtest("sliceSpreadChallenge", () => {
+   test("sliceSpreadChallenge", () => {
       expect(sliceSpreadChallenge()).toEqual(["A", "B", "C", "D", "E", "F", "G"]);
    });
 
@@ -42,12 +42,12 @@ describe ("2 Data Structures", () => {
       expect(sortChallenge([true, 0, 'a', 0, 'a', true])).toEqual([true, true, 0, 0, 'a', 'a']);
    })
 
-   xtest('find', () => {
+   test('find', () => {
       expect(find([1, 2, 3], x => x == 2)).toBe(2);
       expect(find([1, 2, 3], x => null)).toBe(undefined);
       expect(find([1, 2, 3], x => x > 2)).toBe(3);
    })
-   xtest('lastIndexOf', () => {
+   test('lastIndexOf', () => {
       expect(lastIndexOf([3, 3, 3], 3)).toBe(2);
       expect(lastIndexOf([3, 3, 3, 1, 1], 3)).toBe(2);
       expect(lastIndexOf([3, 3, 3, 1, 1], 2)).toBe(-1);
