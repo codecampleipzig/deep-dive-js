@@ -57,7 +57,7 @@ describe ("2 Data Structures", () => {
       expect(includes([1, 2, 3, 4, 5], 6)).toBeFalsy();
       expect(includes([1, 2, 3, 4, 5], 3)).toBeTruthy();
    })
-   xtest('everyContainsA', () => {
+   test('everyContainsA', () => {
       expect(everyContainsA([])).toBeTruthy();
       expect(everyContainsA(["BA"])).toBeTruthy();
       expect(everyContainsA(["A", "BA", "CDA"])).toBeTruthy();
@@ -74,12 +74,12 @@ describe ("2 Data Structures", () => {
       expect(someContainsNumber(["AAA", "AAA", "AA"])).toBeFalsy();
    })
 
-   xtest('some', () => {
+   test('some', () => {
       expect(some(['A', 'B', 'C'], v => v === 'C')).toBeTruthy();
       expect(some(['A', 'B', 'C'], v => false)).toBeFalsy();
    })
 
-   xtest('addEnding', () => {
+   test('addEnding', () => {
       expect(addEnding(["clever", "meek", "hurried", "nice"], "ly"))
       .toEqual(["cleverly", "meekly", "hurriedly", "nicely"]);
       expect(addEnding(["new", "pander", "scoop"], "er"))

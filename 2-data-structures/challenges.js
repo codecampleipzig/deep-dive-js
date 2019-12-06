@@ -64,9 +64,9 @@ function sortChallenge(values) {
 // Implement a function equivalent to Array.prototype.find with a loop
 // If no element satisfies the condition return undefined
 function find(array, predicate) {
-   for (let i = 0; i < array.length; i++) {
-      if (predicate(array[i])) {
-         return array[i]
+   for (const element of array) {
+      if (predicate (element)){
+         return element
       }
    }
    return undefined
@@ -89,7 +89,7 @@ function includes(array, element) {
 
 // Write a function that takes in an array of strings and checks whether each of the strings contain the letter 'A'
 function everyContainsA(strings) {
-
+     return strings.every(word => word.includes("A"))
 }
 
 // A bit hard, except if you use a regex.
@@ -100,14 +100,19 @@ function someContainsNumber(strings) {
 
 // Implement Array.prototype.some with a loop
 function some(array, condition) {
-
+   for (const element of array){
+      if (condition(element)){
+         return true
+      }
+   }
+   return false
 }
 
 // Create a function that adds a string ending to each member in an array.
 // e.g. addEnding(["clever", "meek", "hurried", "nice"], "ly")
 // -> ["cleverly", "meekly", "hurriedly", "nicely"]
 function addEnding(array, ending) {
-
+  return array.map(element => (element + ending))
 }
 
 // Create a function to remove all null values from an array.
