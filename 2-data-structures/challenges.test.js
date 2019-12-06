@@ -1,8 +1,10 @@
 const {
    spliceChallenge,
    highScore, 
+   highScore1,
    sliceSpreadChallenge, 
    entriesStartingWith,
+   entriesStartingWith1,
    sortChallenge,
    find,
    lastIndexOf,
@@ -19,35 +21,45 @@ const {
 } = require("./challenges")
 
 describe ("2 Data Structures", () => {
-   xtest("spliceChallenge", () => {
+   test("spliceChallenge", () => {
       expect(spliceChallenge()).toEqual(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"])
    });
-   xtest("highScore", () => {
+   test("highScore", () => {
       expect(highScore()).toBe(272);
    });
-   xtest("sliceSpreadChallenge", () => {
+   test("highScore1", () => {
+      expect(highScore1()).toBe(272);
+   });
+   test("sliceSpreadChallenge", () => {
       expect(sliceSpreadChallenge()).toEqual(["A", "B", "C", "D", "E", "F", "G"]);
    });
 
-   xtest("entriesStartingWith",() => {
+   test("entriesStartingWith",() => {
       const testGlossary = ["A1", "A2", "A3", "B1", "B2", "D1", "D2"]
       expect(entriesStartingWith(testGlossary, "A")).toEqual(["A1", "A2", "A3"]);
       expect(entriesStartingWith(testGlossary, "B")).toEqual(["B1", "B2"]);
       expect(entriesStartingWith(testGlossary, "C")).toEqual([]);
       expect(entriesStartingWith(testGlossary, "D")).toEqual(["D1", "D2"]);
-   })
+   });
+   test("entriesStartingWith1",() => {
+      const testGlossary = ["A1", "A2", "A3", "B1", "B2", "D1", "D2"]
+      expect(entriesStartingWith1(testGlossary, "A")).toEqual(["A1", "A2", "A3"]);
+      expect(entriesStartingWith1(testGlossary, "B")).toEqual(["B1", "B2"]);
+      expect(entriesStartingWith1(testGlossary, "C")).toEqual([]);
+      expect(entriesStartingWith1(testGlossary, "D")).toEqual(["D1", "D2"]);
+   });
 
-   xtest('sortChallenge',() => {
+   test('sortChallenge',() => {
       expect(sortChallenge(['a', true, 0])).toEqual([true, 0, 'a']);
       expect(sortChallenge([true, 0, 'a', 0, 'a', true])).toEqual([true, true, 0, 0, 'a', 'a']);
    })
 
-   xtest('find', () => {
+   test('find', () => {
       expect(find([1, 2, 3], x => x == 2)).toBe(2);
       expect(find([1, 2, 3], x => null)).toBe(undefined);
       expect(find([1, 2, 3], x => x > 2)).toBe(3);
    })
-   xtest('lastIndexOf', () => {
+   test('lastIndexOf', () => {
       expect(lastIndexOf([3, 3, 3], 3)).toBe(2);
       expect(lastIndexOf([3, 3, 3, 1, 1], 3)).toBe(2);
       expect(lastIndexOf([3, 3, 3, 1, 1], 2)).toBe(-1);
