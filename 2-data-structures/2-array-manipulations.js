@@ -67,9 +67,9 @@ months;
 
 // Sorting data is an extremely important operation, but you should not implement sort yourself
 
-const numbers = [4, 6, 3, 1, 5, 2];
+const letters = ['b', 'c', 'a', 'd', 'e'];
 
-numbers.sort();
+letters.sort();
 
 // You can give the sort method a custom comparator
 
@@ -87,3 +87,13 @@ strings.sort((a, b) => {
    // a and b are equal
    return 0;
 })
+
+// Be aware, that by default sort will compare the string representation of the values
+const numbers = [34, 123, 9]
+numbers.sort()
+numnbers; // [123, 9, 34]
+
+// To sort them as numbers:
+numbers.sort((a, b) => a - b);
+numbers; // [9, 34, 123]
+
