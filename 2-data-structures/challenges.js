@@ -59,11 +59,17 @@ function sortChallenge(values) {
 // Implement a function equivalent to Array.prototype.find with a loop
 // If no element satisfies the condition return undefined
 function find(array, predicate) {
+   for (let i of array) {
+      if (predicate(i)) {
+         return i;
+      }
+   }
+   return undefined;
 }
 
 // Implement lastIndexOf with a loop
 function lastIndexOf(array, element) {
-   let result = -1
+   let result = -1;
    for (let i = array.length - 1; i >= 0; i--) {
       result = (array[i] == element) ? i : -1;
       if (result != -1){
@@ -75,7 +81,7 @@ function lastIndexOf(array, element) {
 
 // Implement includes using indexOf
 function includes(array, element) {
-   return array.indexOf(element) == -1 ? false : true;
+   return array.indexOf(element) != -1;
 }
 
 // Write a function that takes in an array of strings and checks whether each of the strings contain the letter 'A'
@@ -87,12 +93,19 @@ function everyContainsA(strings) {
 // Write a function that takes in an array of strings and checks whether one of the strings contains a number
 function someContainsNumber(strings) {
    // const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+   // numbers.forEach((element) => strings.some(x => x.indexOf (element) != -1))
    // return strings.some(x => x.indexOf (...numbers) != -1)
    return strings.some(x => x.indexOf(0) != -1 || x.indexOf(1) != -1 || x.indexOf(2) != -1 || x.indexOf(3) != -1 || x.indexOf(4) != -1 || x.indexOf(5) != -1 ||x.indexOf(6) != -1 || x.indexOf(7) != -1 ||x.indexOf(8) != -1 ||x.indexOf(9) != -1)
 }
 
 // Implement Array.prototype.some with a loop
 function some(array, condition) {
+   for (let i of array) {
+      if (condition(i) == true) {
+         return true;
+      }
+   }
+   return false;
 }
 
 // Create a function that adds a string ending to each member in an array.
@@ -117,11 +130,12 @@ function removeNull(array) {
 // e.g. flatten([['a', 'b'], ['c', 'd'], ['e']])
 // -> ['a', 'b', 'c', 'd', 'e']
 function flatten(array) {
-
+   return (Array.isArray(array) && array.length != 0) ? (array.reduce((result, element) => result.concat(element))) : [];
 }
 
 // Add destructuring to the parameter list to make this function return user.email
 function getEmail(user) {
+   const {email} = user;
    return email;
 }
 
