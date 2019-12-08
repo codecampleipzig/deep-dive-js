@@ -91,7 +91,7 @@ strings.sort((a, b) => {
 // Be aware, that by default sort will compare the string representation of the values
 const numbers = [34, 123, 9]
 numbers.sort()
-numnbers; // [123, 9, 34]
+numnbers; // [123, 34, 9]
 
 // To sort them as numbers:
 numbers.sort((a, b) => a - b);

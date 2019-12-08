@@ -88,10 +88,13 @@ const third = array[2];
 
 
 // Create bindings to elements inside an array
-const [first, second, third] = array;
+let [first, second, third] = array;
 first;   // "a"
 second;  // "b"
 third;   // "c"
+array; // ['a', 'b', 'c']
+third = 'C';
+array; // ['a', 'b', 'c']
 
 // ... can be used to bind the rest of the array
 const [first, second, ...rest] = ["a", "b", "c", "d", "e"];
