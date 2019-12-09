@@ -22,6 +22,13 @@ array.forEach((element) => {
    // do something with element, e.g.
    console.log (element);
 })
+
+// const myConsoleLog = element => console.log (element);
+
+// myConsoleLog ("Hello World");
+
+array.forEach(console.log);
+
 // Note: early exit via break; is not possible
 
 // **********************************
@@ -31,22 +38,34 @@ array.forEach((element) => {
 
 const drinks = ['beer', 'wine', 'water', 'beer', 'wine', 'water']
 
-drinks.indexOf('water')
-drinks.indexOf('vodka')
+drinks.indexOf('water') // -> 2
+drinks.indexOf('vodka') // -> -1
+
 
 // You can give a second argument to indexOf to tell it at what index to start
 drinks.indexOf('beer', 2)
 drinks.lastIndexOf('wine')
 
+// Equivalent implementation:
+function indexOf (array, element, startIndex = 0) {
+   for (let i = startIndex; i < array.length; ++i) {
+      if (array[i] === element) {
+         return i;
+      }
+   }
+   return -1;
+}
 // includes just checks whether an element is part of the array or not
-drinks.includes('beer');
-drinks.includes('vodka');
+drinks.includes('beer'); // true
+drinks.includes('vodka'); // false
 // it also takes a second argument: an index to start the search from.
-drinks.includes('beer', 4);
+drinks.includes('beer', 4); // false
+
+const drinks = ['beer', 'wine', 'water', 'beer', 'wine', 'water']
 
 // find will look for an element, which satisfies a predicate
-drinks.find(drink => drink.length > 4);
-drinks.find(drink => drink.endsWith('eer'));
+drinks.find(drink => drink.length > 4); // water
+drinks.find(drink => drink.endsWith('eer')); // beer
 
 // **********************************
 // # Predicates
@@ -72,51 +91,24 @@ const cities = [
 {name: "Hamburg", population: 1850000},
 {name: "Köln", population: 1080000}];
 
+['Leipzig', "Dresden", "Berlin", "Hamburg", "Köln"]
+
 // filter
 // Select all elements from an array, that fullfill a certain condition
-cities.filter(city => city.population >= 1000000);
+const bigCities = cities.filter(city => city.population >= 1000000);
+// [{name: "Berlin", population: 3750000},
+// {name: "Hamburg", population: 1850000},
+// {name: "Köln", population: 1080000}]]
 
 // map
+
 // transform one array into another array, by applying a function to each element individually
 
 cities.map(city => city.name);
 cities.map(city => ({...city, country: "Germany"}));
 
-// reduce
-// King of array operations
-
-function reduceImpl(array, loopBodyFunction, initialValue) {
-   let result = initialValue;
-   for (let i = 0; i < array.length; ++i) {
-      const element = array[i];
-      result = loopBodyFunction(result, element, i)
-   }
-   return result;
-}
-
-// Can be used to implement filter
-cities.reduce((result, city) => {
-   if (city.population >= 1000000) {
-      result.push (city);
-   }
-   return result;
-}, []);
-
-// or map
-cities.reduce((result, city) => {
-   result.push (city.name);
-   return result;
-}, []);
-
-// and many other things
-cities.reduce((result, city) => {
-   if (city.population > result.population) {
-      return city;
-   }
-   else {
-      return result;
-   }
-}, cities[0])
+// [{name: "Leipzig", population: 600000, country: "Germany"},
+// {name: "Dresden", population: 550000, country: "Germany"}, ...]
 
 // **********************************
 // # String Array
@@ -125,3 +117,4 @@ cities.reduce((result, city) => {
 // Create a string from an array
 const ingredients = ["chicken", "potatoes", "carrots", "peas", "onions"];
 const shoppingList = ingredients.join("\n");
+// "chicken\npotatoes\ncarrots\n..."
