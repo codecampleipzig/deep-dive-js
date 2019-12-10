@@ -39,15 +39,12 @@ describe("3 Functions : Higher Order Functions", () => {
     expect(mapWith(["a", "b", "c"], s => s + "s")).toEqual(["as", "bs", "cs"]);
   });
   xtest("reduce", () => {
-    expect(
-      reduce([1, 2, 3], (acc, e) => acc + e),
-      0
-    ).toBe(6);
+    expect(reduce([1, 2, 3], (acc, e) => acc + e, 0)).toBe(6);
   });
   xtest("intersection", () => {
     expect(
       intersection([5, 10, 15, 20], [15, 88, 20, 1, 5, 7], [1, 10, 15, 5, 20])
-    ).toEqual([5, 15]);
+    ).toEqual([5, 15, 20]);
     expect(intersection([5, 10, 15, 20])).toEqual([5, 10, 15, 20]);
   });
   xtest("union", () => {
@@ -58,7 +55,7 @@ describe("3 Functions : Higher Order Functions", () => {
       88,
       1,
       7,
-      100
+      110
     ]);
   });
   xtest("objOfMatches", () => {
