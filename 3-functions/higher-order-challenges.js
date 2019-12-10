@@ -75,17 +75,8 @@ const reduce = (array, callback, initialValue) => {
 // Bonus: Use reduce!
 // intersection([5, 10, 15, 20], [15, 18, 1, 5, 7], [1, 10, 15, 5, 20]) -> [5, 15]
 const intersection = (...arrays) => {
-   const array = [...arrays] // add all arrays together [[5, 10, 15, 20], [15, 18, 1, 5, 7], [1, 10, 15, 5, 20]]
-   const compareArray = (a, b) => {
-      let output = [];
-      for (element of a) {
-         if (b.includes(element)) {
-            output.push(element)
-         }
-      }
-      return output;
-   }
-   return reduce(array, compareArray, array[0])
+   return arrays.reduce((a, b) => a.filter( n =>  b.includes(n) ));
+   // return reduce(arrays, (a, b) => a.filter( n =>  b.includes(n) ) , arrays[0])
 };
 
 
@@ -105,9 +96,7 @@ const union = (...arrays) => {
       return a;
    }
    return reduce(array, compareArray, array[0]);
-} 
-
-// union([5, 10, 15], [15, 88, 1, 5, 7], [110, 15, 10, 1, 5]);
+}
 
 // Challenge 9
 // Construct a function objOfMatches that accepts two arrays and a callback.
@@ -117,8 +106,20 @@ const union = (...arrays) => {
 // objOfMatches(['hi', 'howdy', 'bye', 'later', 'hello'], ['HI', 'Howdy, "BYE", 'LATER', 'hello'], str => str.toUpperCase())
 // -> { hi: 'HI', bye: 'BYE', later: 'LATER'}
 const objOfMatches = (array1, array2, callback) => {
-
+   const object = new Object;
+   for ( let i = 0; i < array1.length; i++) {
+      if ( array2[i] == callback(array1[i])) {
+         object[array1[i]] = array2[i];
+      }
+   }
+   return object
 }
+
+// objOfMatches(
+//    ["hi", "howdy", "bye", "later", "hello"],
+//    ["HI", "Howdy", "BYE", "LATER", "hello"],
+//    str => str.toUpperCase()
+//  )
 
 // Challenge 10
 // Construct a function multiMap that will accept two arrays: an array of values and an array of callbacks.

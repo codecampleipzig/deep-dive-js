@@ -58,7 +58,7 @@ describe("3 Functions : Higher Order Functions", () => {
       110
     ]);
   });
-  xtest("objOfMatches", () => {
+  test("objOfMatches", () => {
     expect(
       objOfMatches(
         ["hi", "howdy", "bye", "later", "hello"],
