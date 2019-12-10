@@ -9,6 +9,7 @@ const map = (array, instructions) => {
    const output = [];
    for (let i = 0; i < array.length; i++) {
       output.push(instructions(array[i]));
+      // output = [...output, callback(array[i])];
    }
    return output;
 }
