@@ -19,7 +19,7 @@ const {
 } = require("./challenges")
 
 describe ("2 Data Structures", () => {
-   test("spliceChallenge", () => {
+   xtest("spliceChallenge", () => {
       expect(spliceChallenge()).toEqual(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"])
    });
    test("highScore", () => {

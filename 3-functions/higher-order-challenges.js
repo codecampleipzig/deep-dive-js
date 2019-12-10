@@ -1,13 +1,13 @@
 // Challenge 1
 // Create a function that accepts one argument and adds 2 to it.
 const addTwo = (num) => {
-
+   return num + 2;
 };
 
 // Challenge 2
 // Create a function that accepts one input and adds an 's' to it
 const addS = (word) => {
-
+   return word + "s";
 };
 
 // Challenge 3
@@ -17,7 +17,11 @@ const addS = (word) => {
 // Have map return a new array filled with numbers that are the result of using the 'callback' function on each element of the input array.
 // map([1, 2, 3, 4, 5], addTwo); // -> [3, 4, 5, 6, 7]
 const map = (array, callback) => {
-
+   const result = [];
+   for (let i = 0; i < array.length; i++) {
+      result.push(callback(array[i]));
+   }
+   return result
 };
 
 // Challenge 4
@@ -26,10 +30,12 @@ const map = (array, callback) => {
 // ```
 // let alphabet = '';
 // const letters = ['a', 'b', 'c', 'd'];
-// forEach(leeters, char => alphabet += char);
+// forEach(letters, char => alphabet += char);
 // alphabet; // -> 'abcd'
 const forEach = (array, callback) => {
-
+   for ( let i = 0; i < array.length; i++) {
+      callback(array[i]);
+   }
 };
 
 // Challenge 5
@@ -37,8 +43,11 @@ const forEach = (array, callback) => {
 // This time you're going to use forEach inside of mapWith instead of using a for loop.
 // map and mapWith should have exactly the same observable behaviour
 const mapWith = (array, callback) => {
-
+   const result = [];
+   forEach(array, x => result.push(callback(x)));
+   return result
 };
+
 
 // Challenge 6
 // Reimplement reduce. If you are unsure how reduce should behave, here's a short explanation:
@@ -54,6 +63,10 @@ const mapWith = (array, callback) => {
 // The next loop executes then with this new accumulator value.
 // This continues until all elements in the array have been passed to the accumulator
 const reduce = (array, callback, initialValue) => {
+   for  (let i = 0; i < array.length; i++) {
+      initialValue = callback(initialValue, array[i])
+   }
+   return initialValue;
 };
 
 // Challenge 7
@@ -62,7 +75,19 @@ const reduce = (array, callback, initialValue) => {
 // Bonus: Use reduce!
 // intersection([5, 10, 15, 20], [15, 18, 1, 5, 7], [1, 10, 15, 5, 20]) -> [5, 15]
 const intersection = (...arrays) => {
+   const array = [...arrays] // add all arrays together [[5, 10, 15, 20], [15, 18, 1, 5, 7], [1, 10, 15, 5, 20]]
+   const compareArray = (a, b) => {
+      let output = [];
+      for (element of a) {
+         if (b.includes(element)) {
+            output.push(element)
+         }
+      }
+      return output;
+   }
+   return reduce(array, compareArray, array[0])
 };
+
 
 // Challenge 8
 // Construct a function union that compares input arrays and returns a new array that contains all elements. If there are cuplicate elements, only add it once to teh new array.
@@ -70,8 +95,19 @@ const intersection = (...arrays) => {
 // You may assume, that there are no duplicates within each input array.
 // Bonus: Use reduce!
 const union = (...arrays) => {
-
+   const array = [...arrays];
+   const compareArray = (a, b) => {
+      for (element of b) {
+         if (!a.includes(element)) {
+            a.push(element)
+         }
+      }
+      return a;
+   }
+   return reduce(array, compareArray, array[0]);
 } 
+
+// union([5, 10, 15], [15, 88, 1, 5, 7], [110, 15, 10, 1, 5]);
 
 // Challenge 9
 // Construct a function objOfMatches that accepts two arrays and a callback.

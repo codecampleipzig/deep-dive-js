@@ -17,40 +17,37 @@ const {
 } = require("./higher-order-challenges");
 
 describe("3 Functions : Higher Order Functions", () => {
-  xtest("addTwo", () => {
+  test("addTwo", () => {
     expect(addTwo(3)).toBe(5);
     expect(addTwo(10)).toBe(12);
   });
-  xtest("addS", () => {
+  test("addS", () => {
     expect(addS("pizza")).toBe("pizzas");
     expect(addS("bagel")).toBe("bagels");
   });
-  xtest("map", () => {
+  test("map", () => {
     expect(map([1, 2, 3], x => x + 2)).toEqual([3, 4, 5]);
     expect(map(["a", "b", "c"], s => s + "s")).toEqual(["as", "bs", "cs"]);
   });
-  xtest("forEach", () => {
+  test("forEach", () => {
     let alphabet = "";
     forEach(["a", "b", "c", "d", "e"], c => (alphabet += c));
     expect(alphabet).toBe("abcde");
   });
-  xtest("mapWith", () => {
+  test("mapWith", () => {
     expect(mapWith([1, 2, 3], x => x + 2)).toEqual([3, 4, 5]);
     expect(mapWith(["a", "b", "c"], s => s + "s")).toEqual(["as", "bs", "cs"]);
   });
-  xtest("reduce", () => {
-    expect(
-      reduce([1, 2, 3], (acc, e) => acc + e),
-      0
-    ).toBe(6);
+  test("reduce", () => {
+    expect(reduce([1, 2, 3], (acc, e) => acc + e, 0)).toBe(6);
   });
-  xtest("intersection", () => {
+  test("intersection", () => {
     expect(
       intersection([5, 10, 15, 20], [15, 88, 20, 1, 5, 7], [1, 10, 15, 5, 20])
-    ).toEqual([5, 15]);
+    ).toEqual([5, 15, 20]);
     expect(intersection([5, 10, 15, 20])).toEqual([5, 10, 15, 20]);
   });
-  xtest("union", () => {
+  test("union", () => {
     expect(union([5, 10, 15], [15, 88, 1, 5, 7], [110, 15, 10, 1, 5])).toEqual([
       5,
       10,
@@ -58,7 +55,7 @@ describe("3 Functions : Higher Order Functions", () => {
       88,
       1,
       7,
-      100
+      110
     ]);
   });
   xtest("objOfMatches", () => {
