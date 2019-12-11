@@ -17,6 +17,8 @@ const finalStep = divideBy5(nextStep);
 
 console.log("finalStep", finalStep);
 
+divideBy5(add3(multiplyBy2(11)))
+
 // But risky, lines still potentially rely on all previous lines.
 
 // Better, but unreadable:

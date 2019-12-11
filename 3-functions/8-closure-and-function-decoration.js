@@ -5,9 +5,6 @@
 
 
 
-
-
-
 // Reminding ourselves of how functions work:
 
 const multiplyBy2 = inputNumber => inputNumber * 2;

@@ -17,6 +17,8 @@ const map = (array, instructions) => {
 const multiplyBy2 = input => input * 2;
 const result = map([1, 2, 3], multiplyBy2);
 
+
+
 // In every iteration we reduce an array with a new element
 // i = 0: [], multiplyBy2(1) -> [2]
 // i = 1: [2], multiplyBy2(2) -> [2, 4]
