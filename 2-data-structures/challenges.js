@@ -20,48 +20,18 @@ function highScore() {
 
 // From the glossary (alphabetically sorted list of strings), extract a subsection for a specific starting letter
 // e.g. entriesStartingWith(["Adagio", "Andante", "Breve", "Cadenza", "Chorale", "Dolce"], "C") -> ["Cadenza", "Chorale"]
-function entriesStartingWith(glossary, startingLetter) {}
-let startingIndex;
-let endingIndex;
-//    // // Find indexOf First Element startingWith startingLetter
+function entriesStartingWith(glossary, startingLetter) {
+  return glossary.filter(word => word.charAt(0) == startingLetter);
 
-//    // // Find indexOf First Element not startingWith startingLetter AFTER that index
-
-//    // // slice from first to second index;
-//    // return glossary.slice(startingIndex, endingIndex);
-console.log(glossary);
-const [first, ...rest] = glossary;
-if (first === undefined) {
-   return false;
-} else if (first.charAt(0) ==! undefined) { 
-   for (let i = 0; i < array.length; i++) {
-      if (first.charAt(0) == startingLetter) { 
-   return startingIndex = array[i];
-   } else if (first.charAt(0)==! startingLetter)
-   return endingIndex = array[i];
-   }}
-console.log(startingIndex, endingIndex)
-      // first starts With startingLetter
-      // return [first, ...entriesFromBeginningStartingWith(rest, startingLetter)];
-//    console.log(entriesStartingWith(rest, startingLetter));
-// }
-// else {
-//    return entriesStartingWith(rest, startingLetter);
-
-
-entriesStartingWith(["Adagio", "Andante", "Breve", "Cadenza", "Chorale", "Dolce"], "C");
-
-function contains([first, ...rest], element) {
-   if (first === undefined) {
-      return false;
-   }
-   else if (first == element) {
-      return true;
-   }
-   else {
-      return contains(rest, element);
-   }
+   // let myArray = [];
+   // for (let i=0; i < glossary.length; i++){
+   //    if (glossary[i].charAt(0) == startingLetter){
+   //       myArray.push(glossary[i]);
+   //    }
+   // }
+   // return myArray;
 }
+
 
 // Without touching the array literals, and without adding any new string literals, return this array:
 // ["A", "B", "C", "D", "E", "F", "G"]

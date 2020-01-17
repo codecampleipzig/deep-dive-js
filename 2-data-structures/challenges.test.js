@@ -11,7 +11,7 @@ describe ("2 Data Structures", () => {
       expect(sliceSpreadChallenge()).toEqual(["A", "B", "C", "D", "E", "F", "G"]);
    });
 
-   xtest("entriesStartingWith",() => {
+   test("entriesStartingWith",() => {
       const testGlossary = ["A1", "A2", "A3", "B1", "B2", "D1", "D2"]
       expect(entriesStartingWith(testGlossary, "A")).toEqual(["A1", "A2", "A3"]);
       expect(entriesStartingWith(testGlossary, "B")).toEqual(["B1", "B2"]);
