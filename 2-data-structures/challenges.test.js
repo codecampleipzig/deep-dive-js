@@ -23,9 +23,9 @@ describe ("2 Data Structures", () => {
       const testGlossary = null;
       expect(entriesStartingWith(testGlossary, "A")).toEqual(undefined);
    
-   }) 
+   });
 
-   xtest('sortChallenge',() => {
+   test('sortChallenge',() => {
       expect(sortChallenge(['a', true, 0])).toEqual([true, 0, 'a']);
       expect(sortChallenge([true, 0, 'a', 0, 'a', true])).toEqual([true, true, 0, 0, 'a', 'a']);
    })

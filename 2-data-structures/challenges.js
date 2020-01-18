@@ -55,7 +55,29 @@ function sliceSpreadChallenge() {
 // Sort an array of values, by type in this order: First booleans, than numbers, than strings.
 // Apart from that, the order is undefined
 // sortChallenge(['a', true, 3]) -> [true, 3, 'a']
-function sortChallenge(values) {}
+function sortChallenge(values) {
+   values.sort((a, b) => {
+      let typeOfA = typeof a;
+      let typeOfB = typeof b;
+      if (typeOfA < typeOfB){
+         return -1;
+      } if (typeOfA > typeOfB){
+         return 1;
+      } return 0;
+   }) 
+   return values;
+}
+
+   // let sortedArray = []; 
+   // for (let i=0; i < values.length; i++){
+      //    if (typeof values[i] === 'boolean'){
+         //       sortedArray.push(values[i]);
+         //    } else if (typeof values[i] === 'number'){
+            //       sortedArray.push(values[i]);
+            //    } else if (typeof values[i] === 'string'){
+               //       sortedArray.push(values[i]);
+               //    } 
+               //    }
 
 module.exports = {
   spliceChallenge,
