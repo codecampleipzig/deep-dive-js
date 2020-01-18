@@ -1,6 +1,6 @@
 const number = Math.random();
 
-if (number >= 0.5){
+if (number >= 0.5) {
    console.log ("You won");
 }
 else {

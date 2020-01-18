@@ -80,30 +80,33 @@ animals.slice(2);
 // # Destructuring
 // **********************************
 
+const array = ['a', 'b', 'c'];
+
+const first = array[0];
+const second = array[1];
+const third = array[2];
+
+
 // Create bindings to elements inside an array
-const [first, second, third] = ["a", "b", "c"];
+let [first, second, third] = array;
+first;   // "a"
+second;  // "b"
+third;   // "c"
+array; // ['a', 'b', 'c']
+third = 'C';
+array; // ['a', 'b', 'c']
 
 // ... can be used to bind the rest of the array
 const [first, second, ...rest] = ["a", "b", "c", "d", "e"];
-first;
-second;
-rest;
+first; // 'a'
+second; // 'b'
+rest; // ['c', 'd', 'e']
 
-// Extremely useful with key value pairs
+const clone = [...aToC];
+clone; // ['A', 'B', 'C']
 
-const dependencies = {
-   "husky": "^3.1.0",
-   "jest": "^24.9.0",
-   "lint-staged": "^9.4.3",
-   "prettier": "^1.19.1",
-   "tslint": "~5.15.0",
-   "typescript": "~3.5.3"
-};
-
-const [package0, version0] = dependencies.entries()[0];
-const [package1, version1] = dependencies.entries()[1];
-const [package2, version2] = dependencies.entries()[2];
-//...
+const [...clone] = aToC; 
+clone; // ['A', 'B', 'C']
 
 // Can also be used to destructure function arguments
 function contains([first, ...rest], element) {
@@ -116,4 +119,14 @@ function contains([first, ...rest], element) {
    else {
       return contains(rest, element);
    }
+}
+
+// Loop version
+function contains2(array, element) {
+   for (let i = 0; i < array.length; i++) {
+      if (array[i] == element) {
+         return true;
+      }
+   }
+   return false;
 }
